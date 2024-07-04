@@ -1,0 +1,28 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Cadastrar{% endblock %}
+{% block conteudo %}
+
+<div class="container">
+    <div class="row m-5 justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body ">
+                    <h3 class="card-title text-left  m-4">Redefinição de Senha</h3>
+                    <form>
+                      <p class="m-4"> Digite seu e-mail no campo abaixo e lhe enviaremos instruções para redefinição de senha.
+                      </P>
+                        <div class="form-group m-lg-5 ">
+                            <input type="email" class="form-control " id="email" name="email" placeholder="E-mail">
+                        </div>
+                                         
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-block m-2 botao-login " >Redefinir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

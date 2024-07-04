@@ -15,3 +15,10 @@ async def get_root(request: Request):
 async def get_cadastro(request: Request):
     return templates.TemplateResponse("pages/cadastro.html", {"request": request})
 
+@router.get("/login", response_class=HTMLResponse)
+async def get_login(request: Request):
+    return templates.TemplateResponse("pages/login.html", {"request": request})
+
+@router.get("/redefinir_senha", response_class=HTMLResponse)
+async def get_redefinir(request: Request):
+    return templates.TemplateResponse("pages/redefinir_senha.html", {"request": request})

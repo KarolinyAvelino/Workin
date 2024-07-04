@@ -94,6 +94,7 @@ button.btn-custom {
     position: fixed;
     bottom: 20px;
     right: 20px;
+
 }
 
 .button {
@@ -109,6 +110,7 @@ button.btn-custom {
     cursor: pointer;
     position: relative;
     z-index: 1;
+
 }
 
 .rectangle {
@@ -179,58 +181,13 @@ button.btn-custom {
     border: 12px solid #107969;
 }
 
+.botao-login{
+    background-color: #FF9052;
+    color:#ffffff;
+
+}
 .button1.active + .button1-rectangle,
 .button2.active + .button2-rectangle,
 .button3.active + .button3-rectangle {
     display: block;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-login-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-login-container input[type="email"],
-login-container input[type="senha"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-login-container a {
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007BFF;
-    text-decoration: none;
-}
-login-container button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #FF8C69;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-login-container button:hover {
-    background-color: #FF7043;
 }

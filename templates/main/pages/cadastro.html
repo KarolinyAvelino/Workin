@@ -10,36 +10,40 @@
                     <form>
                         <div class="form-group">
                             <label for="nomeCompleto">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome Completo">
+                            <input type="text" class="form-control" id="nomeCompleto" >
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="E-mail">
+                            <input type="email" class="form-control" id="email" >
                         </div>
                         <div class="form-group">
                             <label for="telefone">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                            <input type="text" class="form-control" id="telefone" >
                         </div>
                         <div class="form-group">
                             <label for="categoria">Categoria</label>
-                            <select class="form-control" id="categoria">
-                                <option>Escolha a sua categoria</option>
-                                <!-- Adicionar categorias -->
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Escolha a sua categoria</option>
+                                <option value="1">Limpeza</option>
+                                <option value="2">Beleza</option>
+                                <option value="3">Cuidador</option>  
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="especialidade">Especialidade</label>
-                            <input type="text" class="form-control" id="especialidade" placeholder="Especialidade">
+                            <input type="text" class="form-control" id="especialidade" >
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Senha">
+                            <input type="password" class="form-control" id="senha">
                         </div>
                         <div class="form-group">
                             <label for="confirmaSenha">Confirmar senha</label>
-                            <input type="password" class="form-control" id="confirmaSenha" placeholder="Confirmar senha">
+                            <input type="password" class="form-control" id="confirmaSenha" >
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
+                        </div>
                     </form>
                 </div>
             </div>
