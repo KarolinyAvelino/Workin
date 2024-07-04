@@ -1,0 +1,157 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Página Principal{% endblock %}
+{% block conteudo %}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <link rel="shortcut icon" type="imagex/png" href="./logo/workin.ico">
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle" data-category="encanador">
+            <img src="static/img/logo/logopasseador.png" alt="Imagem acima do Passeador de Pets">
+            <div class="circle-inner"></div>
+            <p>Passeador de Pets</p>
+        </div>
+        <div class="circle" data-category="baba">
+            <img src="static/img/logo/logoresidual.png" alt="Imagem acima do Serviços Residuais">
+            <div class="circle-inner"></div>
+            <p>Serviços Residenciais</p>
+        </div>
+        <div class="circle" data-category="pintor">
+            <div class="circle-inner"></div>
+            <img src="static/img/logo/logolimpeza.png" alt="Imagem acima de Limpeza">
+            <p>Limpeza</p>
+        </div>
+        <div class="circle" data-category="eletricista">
+            <div class="circle-inner"></div>
+            <img src="static/img/logo/logocuidador.png" alt="Imagem acima do Cuidador">
+            <p>Cuidador</p>
+        </div>
+        <div class="circle" data-category="jardineiro">
+            <div class="circle-inner"></div>
+            <img src="static/img/logo/logojardinagem.png" alt="Imagem acima do Cuidador">
+            <p>Jardineiro</p>
+        </div>
+        <div class="circle" data-category="faxineiro">
+            <div class="circle-inner"></div>
+            <img src="static/img/logo/logobeleza.png" alt="Imagem acima da Beleza">
+            <p>Beleza</p>
+        </div>
+        <div class="circle" data-category="motorista">
+            <div class="circle-inner"></div>
+            <img src="static/img/logo/logoinformatica.png" alt="Imagem acima de Informática">
+            <p>Informática</p>
+        </div>
+    </div>
+
+    <div class="photo-grid">
+        <!-- As fotos de perfil aparecerão aqui -->
+    </div>
+
+    <div class="button-container">
+        <div class="button button1"><img src="static/img/demandalogo.png" alt="Botão 1"></div>
+        <div class="button1-rectangle">Conteúdo do botão 1</div>
+        <div class="button button2"><img src="static/img/fotoslogo.png" alt="Botão 2"></div>
+        <div class="button2-rectangle">Conteúdo do botão 2</div>
+        <div class="button button3"><img src="static/img/chatlogo.png" alt="Botão 3"></div>
+        <div class="button3-rectangle">Conteúdo do botão 3</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const circles = document.querySelectorAll('.circle');
+            const photoGrid = document.querySelector('.photo-grid');
+
+            const profiles = {
+                encanador: [
+                    { src: 'static/img/images/passeador1.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador1.html' },
+                    { src: 'static/img/images/passeador2.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador2.html' },
+                    { src: 'static/img/images/passeador3.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador3.html' },
+                    { src: 'static/img/images/passeador4.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador4.html' },
+                    { src: 'static/img/images/passeador5.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador5.html' },
+                    { src: 'static/img/images/passeador6.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador6.html' },
+                    { src: 'static/img/images/passeador7.webp', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador7.html' },
+                    { src: 'static/img/images/passeador8.webp', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador8.html' },
+                    { src: 'static/img/images/passeador9.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador9.html' },
+                    { src: 'static/img/images/passeador10.webp', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador10.html' },
+                    { src: 'static/img/images/passeador11.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador11.html' },
+                    { src: 'static/img/images/passeador12.jpg', nome: 'Nome do Passeador', especialidade: 'especialidade', cidade: 'Cidade cidade', url: 'passeador12.html' },
+                ],
+                baba: [
+                    { src: 'static/img/images/encanador1.jpg', nome: 'Nome do Baba', especialidade: 'Serviços Residuais', cidade: 'Cidade C', url: 'baba1.html' },
+                    { src: 'static/img/images/encanador2.jpg', nome: 'Nome do Baba', especialidade: 'Serviços Residuais', cidade: 'Cidade D', url: 'baba2.html' },
+                ],
+            };
+
+            function selectCategory(circle) {
+                circles.forEach(c => c.classList.remove('active'));
+                circle.classList.add('active');
+
+                const category = circle.getAttribute('data-category');
+                const selectedProfiles = profiles[category];
+                photoGrid.innerHTML = '';
+
+                selectedProfiles.forEach(profile => {
+                    const container = document.createElement('div');
+                    container.classList.add('profile-container');
+
+                    const img = document.createElement('img');
+                    img.src = profile.src;
+                    img.addEventListener('click', () => {
+                        window.location.href = profile.url;
+                    });
+                    container.appendChild(img);
+
+                    const info = document.createElement('div');
+                    info.classList.add('profile-info');
+
+                    const nameAndSpecialty = document.createElement('p');
+                    nameAndSpecialty.textContent = `${profile.nome} | ${profile.especialidade}`;
+                    info.appendChild(nameAndSpecialty);
+
+                    const city = document.createElement('p');
+                    city.textContent = profile.cidade;
+                    info.appendChild(city);
+
+                    container.appendChild(info);
+                    photoGrid.appendChild(container);
+                });
+            }
+
+            circles.forEach(circle => {
+                circle.addEventListener('click', () => {
+                    selectCategory(circle);
+                });
+            });
+
+            let activeCircle = document.querySelector('.circle.active');
+            if (!activeCircle && circles.length > 0) {
+                selectCategory(circles[0]);
+            }
+        });
+
+        const buttons = document.querySelectorAll('.button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.classList.contains('active')) {
+                    button.classList.remove('active');
+                } else {
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+{% endblock %}

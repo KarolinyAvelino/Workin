@@ -1,0 +1,49 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Cadastrar{% endblock %}
+{% block conteudo %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Seja um profissional Workin!</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="nomeCompleto">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome Completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select class="form-control" id="categoria">
+                                <option>Escolha a sua categoria</option>
+                                <!-- Adicionar categorias -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade</label>
+                            <input type="text" class="form-control" id="especialidade" placeholder="Especialidade">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Senha">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmaSenha">Confirmar senha</label>
+                            <input type="password" class="form-control" id="confirmaSenha" placeholder="Confirmar senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

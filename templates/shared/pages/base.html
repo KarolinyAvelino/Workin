@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/css/estilos.css">
+    <title>Workin :: {% block subtitulo %}{% endblock %}</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    {% include "includes/header.html" %}
+    {% block conteudo %}
+    {% endblock %}
+    {% include "includes/footer.html" %}
+</body>
