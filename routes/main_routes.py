@@ -22,3 +22,12 @@ async def get_login(request: Request):
 @router.get("/redefinir_senha", response_class=HTMLResponse)
 async def get_redefinir(request: Request):
     return templates.TemplateResponse("pages/redefinir_senha.html", {"request": request})
+
+
+@router.get("/perfil_cliente", response_class=HTMLResponse)
+async def get_perfil_cliente(request: Request):
+    return templates.TemplateResponse("pages/perfil_cliente.html", {"request": request})
+
+@router.get("/perfil_prestador", response_class=HTMLResponse)
+async def get_perfil_prestador(request: Request):
+    return templates.TemplateResponse("pages/perfil_prestador.html", {"request": request})

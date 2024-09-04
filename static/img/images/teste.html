@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .profile-section {
+            width: 70%;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .profile-header img.profile-picture {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .profile-header .stars {
+            color: #FFBA5C;
+            font-size: 30px;
+        }
+        .categoria {
+            color: #00A6FF;
+        }
+        .profile-header img.icon {
+            margin-left: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        .separator {
+            width: 100%;
+            border-bottom: 2px solid black;
+        }
+        .comments-section {
+            margin-top: 20px;
+        }
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .comment2 {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            margin-left: 70px;
+        }
+        .comment img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .comment2 img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .comment-content {
+            width: 100%;
+        }
+        .comment-content .name {
+            font-weight: bold;
+        }
+        .comment-content .rating {
+            color: #FFBA5C;
+        }
+        .ad-section {
+            width: 525px;
+            height: 726px;
+        }
+        .ad-section img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .text-wrap {
+            width: 60ch; /* Limita a largura a 60 caracteres */
+            word-wrap: break-word; /* Força a quebra de linha se o texto ultrapassar a largura */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="harry.jpg" alt="Karla Silva Cardoso" class="profile-picture" width="100" height="100">
+        <div>
+            <h1>Karla Silva Cardoso
+                <img src="engrenagem.png" alt="Icon" class="icon">
+            </h1>
+            <div class="stars">★★★★☆</div>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="comments-section">
+                <h2>Comentários:</h2>
+
+                <div class="comment">
+                    <img src="edricp.jpg" alt="Comentador" width="50" height="50">
+                    <div class="comment-content">
+                        <div class="name">Edrico</div>
+                        <div class="categoria">Guiador de pets - Um mês atrás</div>
+                        <div class="rating">★★★★★</div>
+                        <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                        <br>
+                        <div>
+                            <span>2 Likes</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment2">
+                    <img src="harry.jpg" alt="Comentador" width="50" height="50">
+                    <div class="comment-content">
+                        <div class="name">Harry Potter</div>
+                        <div class="categoria">Respondeu Edrico - Um mês atrás</div>
+                        <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                        <br>
+                        <div>
+                            <span>1 Likes</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" style="width: 700px; margin: 20px 0;"></div>
+
+                <div class="comment">
+                    <img src="Dobby.jpeg" alt="Comentador" width="50" height="50">
+                    <div class="comment-content">
+                        <div class="name">Nome Sobrenome</div>
+                        <div class="categoria">Jardineiro - Dois meses atrás</div>
+                        <div class="rating">★★★★★</div>
+                        <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                        <br>
+                        <div>
+                            <span>11 Likes</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator" style="width: 700px; margin: 20px 0;"></div>
+
+                <div class="comment">
+                    <img src="draco.jpg" alt="Comentador" width="50" height="50">
+                    <div class="comment-content">
+                        <div class="name">Nome Sobrenome</div>
+                        <div class="categoria">Baba - Um ano atrás</div>
+                        <div class="rating">★★☆☆☆</div>
+                        <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                        <br>
+                        <div>
+                            <span>9 Likes</span>
+                            <span>Responder</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ad-section">
+            <img src="propaganda.PNG" alt="Propaganda">
+        </div>
+    </div>
+
+</body>
+</html>
