@@ -1,0 +1,77 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Cliente escreve demanda{% endblock %}
+{% block conteudo %}
+
+<div class="container-fluid py-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-8">
+            <div class="pagina-atual bg-light py-5 px-3 rounded">
+                <h1>PÁGINA ATUAL</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Caixa de Categorias e Serviços no canto inferior direito -->
+    <div class="caixa-servicos position-fixed bottom-0 end-0">
+        <div class="card p-3 shadow-sm">
+            <div class="row">
+                <!-- Coluna de Categorias -->
+                <div class="col-6">
+                    <h5>Categorias</h5>
+                    <!-- Lista de Categorias -->
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="bi bi-grid-1x2"></i> Todas Categorias</li>
+                        <li class="list-group-item"><i class="bi bi-house-door-fill"></i> Limpeza</li>
+                        <li class="list-group-item"><i class="bi bi-trash-fill"></i> Serviços Residuais</li>
+                        <li class="list-group-item"><i class="bi bi-heart-fill"></i> Cuidador</li>
+                        <li class="list-group-item"><i class="bi bi-paw-fill"></i> Passeador de Pets</li>
+                        <li class="list-group-item"><i class="bi bi-scissors"></i> Beleza</li>
+                        <li class="list-group-item"><i class="bi bi-flower1"></i> Jardineiro</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna de Pedidos -->
+                <div class="col-6">
+                    <h5>Pedidos</h5>
+                    <!-- Lista de Serviços -->
+                    <div class="servicos">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <img src="static/img/images/img_cliente4.jpg" class="rounded-circle me-3" alt="Foto do usuário">
+                            <div>
+                                <strong>Karla Silva</strong>
+                                <p class="small mb-0">Estou precisando de uma babá para meus 4 filhos...</p>
+                            </div>
+                            <button class="btn btn-success">Pegar Serviço</button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <img src="static/img/images/img_cliente1.jpg" class="rounded-circle me-3" alt="Foto do usuário">
+                            <div>
+                                <strong>Marina Izo</strong>
+                                <p class="small mb-0">Encanador, na minha casa, pra ontem.</p>
+                            </div>
+                            <button class="btn btn-success">Pegar Serviço</button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <img src="static/img/images/img_cliente2.jpg" class="rounded-circle me-3" alt="Foto do usuário">
+                            <div>
+                                <strong>Gal Costa</strong>
+                                <p class="small mb-0">Eu não sei onde foi parar o desenho amarelo do meu celular...</p>
+                            </div>
+                            <button class="btn btn-success">Pegar Serviço</button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <img src="static/img/images/img_cliente3.jpg" class="rounded-circle me-3" alt="Foto do usuário">
+                            <div>
+                                <strong>Marcia Pantera</strong>
+                                <p class="small mb-0">Dificuldade para imprimir folhinhas...</p>
+                            </div>
+                            <button class="btn btn-success">Pegar Serviço</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%  endblock %}

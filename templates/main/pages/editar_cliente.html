@@ -1,0 +1,79 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Login{% endblock %}
+{% block conteudo %}
+
+<div class="container">
+
+    <div class="card-body">
+        <div class="profile-header">
+            <img src="static/img/images/harry.jpg" alt="Karla Silva Cardoso" class="profile-picture" width="100" height="100">
+            <div>
+                <h1>Karla Silva Cardoso
+                    <img src="static/img/logo/engrenagem.png" alt="Icon" class="icon">
+                </h1>
+                <div class="stars">
+                    <!-- Ícones de Estrela (5 estrelas) -->
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <p class="description">Amo animais. Passeio, corro, faço exercícios.</p>
+                <p><strong>Email:</strong> rafaelasandrini@gmail.com</p>
+                <p><strong>Whatsapp:</strong> (28) 99999-9090</p>
+                <p><strong>Cidade:</strong> Cachoeiro de Itapemirim - Paraíso</p>
+            </div>
+        </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+    
+                    
+                    <!-- Formulário de Edição -->
+                    <form>
+                        <!-- Modificar Nome -->
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Modificar nome</label> <br>
+                            <input type="text" class="form-control" id="nome" placeholder="Novo nome">
+                        </div>
+
+                        <!-- Modificar Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Modificar email</label> <br>
+                            <input type="email" class="form-control" id="email" placeholder="Novo email">
+                        </div>
+
+                        <!-- Modificar Senha -->
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Modificar senha</label> <br>
+                            <input type="password" class="form-control" id="senha" placeholder="Nova senha">
+                        </div>
+
+                        <!-- Modificar Descrição -->
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Modificar descrição</label> <br>
+                            <textarea class="form-control" id="descricao" rows="3">Amo animais. Passeio, corro, faço exercícios.</textarea>
+                        </div>
+
+                        <!-- Modificar Telefone -->
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Modificar telefone</label> <br>
+                            <input type="text" class="form-control" id="telefone" placeholder="Novo número de telefone">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                        <button type="submit" class="btn btn-primary">Cancelar alterações</button>
+                    </form>
+                <div class="ad-section">
+                    <img src="static/img/images/propaganda.PNG" alt="Propaganda">
+                </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

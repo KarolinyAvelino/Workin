@@ -1,0 +1,28 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Reenviar código{% endblock %}
+{% block conteudo %}
+
+<div class="container">
+    <div class="reset-password-container">
+        <h2>Redefinição de senha</h2>
+        <p>Por favor, verifique o código enviado ao e-mail inserido para criar uma nova senha.</p>
+        <form method="POST" action="/reset-password">
+            <div class="form-group">
+                <label for="codigo">Código</label>
+                <input type="text" class="form-control" id="codigo" name="codigo" required>
+            </div>
+            <div class="form-group">
+                <label for="nova_senha">Nova senha</label>
+                <input type="password" class="form-control" id="nova_senha" name="nova_senha" required>
+            </div>
+            <div class="form-group">
+                <label for="repita_senha">Repita a nova senha</label>
+                <input type="password" class="form-control" id="repita_senha" name="repita_senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-redefinir">Redefinir</button>
+        </form>
+        <a href="#" class="btn-resend-code">Reenviar código</a>
+    </div>
+</div>
+
+{% endblock %}
