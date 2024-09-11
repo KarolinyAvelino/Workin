@@ -2,25 +2,30 @@
 {% block subtitulo %}Perfil do cliente{% endblock %}
 {% block conteudo %}
 
-<div class="container">
 
-    <div class="card-body">
-        <div class="profile-header">
-            <img src="static/img/images/harry.jpg" alt="Karla Silva Cardoso" class="profile-picture" width="100" height="100">
+    <div class="profile-header">
+        <img src="static/img/images/harry.jpg" alt="Karla Silva Cardoso" class="profile-picture" width="100" height="100">
             <div>
-                <h1>Karla Silva Cardoso
-                    <img src="static/img/logo/engrenagem.png" alt="Icon" class="icon">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Harry Potter
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                    <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                </div>
                 </h1>
                 <div class="stars">★★★★☆</div>
             </div>
-        </div>
-        <div class="separator"></div>
-    
+    </div>
+    <div class="separator"></div>
+
         <div class="container">
             <div class="profile-section">
                 <div class="comments-section">
                     <h2>Comentários:</h2><br>
-    
+
                     <div class="comment">
                         <img src="static/img/images/edricp.jpg" alt="Comentador" width="50" height="50">
                         <div class="comment-content">
@@ -35,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="comment2">
                         <img src="static/img/images/harry.jpg" alt="Comentador" width="50" height="50">
                         <div class="comment-content">
@@ -49,9 +54,9 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="separator" style="width: 700px; margin: 20px 0;"></div>
-    
+
                     <div class="comment">
                         <img src="static/img/images/Dobby.jpeg" alt="Comentador" width="50" height="50">
                         <div class="comment-content">
@@ -66,9 +71,9 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="separator" style="width: 700px; margin: 20px 0;"></div>
-    
+
                     <div class="comment">
                         <img src="static/img/images/draco.jpg" alt="Comentador" width="50" height="50">
                         <div class="comment-content">
@@ -83,14 +88,16 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
             </div>
-    
+
             <div class="ad-section">
                 <img src="static/img/images/propaganda.PNG" alt="Propaganda">
-            
+
             </div>
         </div>
-                
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 {% endblock %}

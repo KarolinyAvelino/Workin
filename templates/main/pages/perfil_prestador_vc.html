@@ -3,9 +3,10 @@
 {% block conteudo %}
 
 <div class="profile-header">
-    <img src="static/img/images/harry.jpg" alt="Harry Potter" class="profile-picture" width="100" height="100">
+    <img src="harry.jpg" alt="Harry Potter" class="profile-picture" width="100" height="100">
     <div>
-        <h1>Harry James Potter</h1>
+        <h1>Harry James Potter
+        </h1>
         <div class="categoriaperfil">Guiador de pets - Um mês atrás</div>
         <div class="stars">★★★★☆</div>
     </div>
@@ -24,18 +25,18 @@
             <h2>Meus Trabalhos:</h2>
 
             <div class="Imagens-meus-trabalhos">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            </div><br>
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            </div>
 
-            <h2>Comentários:</h2> 
+            <h2>Comentários:</h2>
 
             <div class="comment">
-                <img src="static/img/images/edricp.jpg" alt="Comentador" width="50" height="50">
+                <img src="edricp.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Edrico</div>
                     <div class="categoria">Guiador de pets - Um mês atrás</div>
@@ -50,7 +51,7 @@
             </div>
 
             <div class="comment2">
-                <img src="static/img/images/harry.jpg" alt="Comentador" width="50" height="50">
+                <img src="harry.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Harry James Potter</div>
                     <div class="categoria">Respondeu Edrico - Um mês atrás</div>
@@ -66,7 +67,7 @@
             <div class="separator" style="width: 700px; margin: 20px 0;"></div>
 
             <div class="comment">
-                <img src="static/img/images/Dobby.jpeg" alt="Comentador" width="50" height="50">
+                <img src="Dobby.jpeg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Robbie Coltrane</div>
                     <div class="categoria">Jardineiro - Dois meses atrás</div>
@@ -83,7 +84,7 @@
             <div class="separator" style="width: 700px; margin: 20px 0;"></div>
 
             <div class="comment">
-                <img src="static/img/images/draco.jpg" alt="Comentador" width="50" height="50">
+                <img src="draco.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Draco Malfor</div>
                     <div class="categoria">Baba - Um ano atrás</div>
@@ -422,15 +423,7 @@
             </div>
         </div>
     </div>
+
+
 </div>
-
-<script>
-    document.querySelectorAll('.day').forEach(day => {
-        day.addEventListener('click', () => {
-            day.classList.toggle('clicked');
-        });
-    });
-</script>
-
-
 {% endblock %}
