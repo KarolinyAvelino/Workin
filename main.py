@@ -1,5 +1,5 @@
-from fastapi import Depends, FastAPI
-from fastapi.staticfiles import StaticFiles
+from fastapi import Depends, FastAPI # type: ignore
+from fastapi.staticfiles import StaticFiles # type: ignore
 from repositories.usuario_repo import UsuarioRepo
 from routes import main_routes
 from util.auth import checar_permissao, middleware_autenticacao

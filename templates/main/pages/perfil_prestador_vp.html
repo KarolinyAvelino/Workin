@@ -1,45 +1,42 @@
 {% extends "pages/base.html" %}
-{% block subtitulo %}Perfil prestador, visão cliente{% endblock %}
+{% block subtitulo %}Perfil do prestador{% endblock %}
 {% block conteudo %}
 
 <div class="profile-header">
-    <img src="static/img/images/harry.jpg" alt="Harry Potter" class="profile-picture" width="70" height="70">
-    <div class="profile-info">
+    <img src="harry.jpg" alt="Harry Potter" class="profile-picture" width="100" height="100">
+    <div>
         <h1>Harry James Potter
-            <img src="static/img/logo/engrenagem.png" alt="Icon" class="icon">
         </h1>
         <div class="categoriaperfil">Guiador de pets - Um mês atrás</div>
         <div class="stars">★★★★☆</div>
     </div>
     <div class="contact-info">
-        <p><strong>E-mail:</strong> rafaelasandrini@gmail.com</p>
-        <p><strong>Descrição:</strong> Amo animais. Passeio, corro, faço exercícios <span class="ler-mais">LER MAIS...</span></p>
-        <p><strong>Whatsapp:</strong> (28) 999909-9090</p>
-        <p><strong>Cidade:</strong> Cachoeiro de Itapemirim - Paraíso</p>
+        <p><strong div class="contact-info-texto" >E-mail:</strong>rafaelasandrini@gmail.com</p>
+        <p><strong div class="contact-info-texto">Descrição:</strong> Amo animais. Passeio, corro, faço exercícios <span class="ler-mais">LER MAIS...</span></p>
+        <p><strong div class="contact-info-texto">Whatsapp:</strong> (28) 999909-9090</p>
+        <p><strong div class="contact-info-texto">Cidade:</strong> Cachoeiro de Itapemirim - Paraíso</p>
     </div>
 </div>
-
 <div class="separator"></div>
 
-<!-- Seção de Trabalhos e Comentários -->
 <div class="container">
     <div class="profile-section">
         <div class="comments-section">
             <h2>Meus Trabalhos:</h2>
 
             <div class="Imagens-meus-trabalhos">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            </div><br>
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            <img src="trabalhos.jpg" alt="Trabalho1" width="50" height="50">
+            </div>
 
-       <h2>Comentários:</h2> 
+            <h2>Comentários:</h2>
 
             <div class="comment">
-                <img src="static/img/images/edricp.jpg" alt="Comentador" width="50" height="50">
+                <img src="edricp.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Edrico</div>
                     <div class="categoria">Guiador de pets - Um mês atrás</div>
@@ -54,7 +51,7 @@
             </div>
 
             <div class="comment2">
-                <img src="static/img/images/harry.jpg" alt="Comentador" width="50px" height="50px">
+                <img src="harry.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Harry James Potter</div>
                     <div class="categoria">Respondeu Edrico - Um mês atrás</div>
@@ -70,7 +67,7 @@
             <div class="separator" style="width: 700px; margin: 20px 0;"></div>
 
             <div class="comment">
-                <img src="static/img/images/Dobby.jpeg" alt="Comentador" width="50" height="50">
+                <img src="Dobby.jpeg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Robbie Coltrane</div>
                     <div class="categoria">Jardineiro - Dois meses atrás</div>
@@ -87,7 +84,7 @@
             <div class="separator" style="width: 700px; margin: 20px 0;"></div>
 
             <div class="comment">
-                <img src="static/img/images/draco.jpg" alt="Comentador" width="50" height="50">
+                <img src="draco.jpg" alt="Comentador" width="50" height="50">
                 <div class="comment-content">
                     <div class="name">Draco Malfor</div>
                     <div class="categoria">Baba - Um ano atrás</div>
@@ -426,16 +423,7 @@
             </div>
         </div>
     </div>
+
+
 </div>
-
-<script>
-    document.querySelectorAll('.day').forEach(day => {
-        day.addEventListener('click', () => {
-            day.classList.toggle('clicked');
-        });
-    });
-</script>
-
-
 {% endblock %}
-

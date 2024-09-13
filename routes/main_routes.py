@@ -65,12 +65,6 @@ async def get_denuncia(request: Request):
 async def get_demanda_prestador(request: Request):
     return templates.TemplateResponse("pages/demanda_prestador.html", {"request": request})
 
-
-@router.get("/prestador_visao_cliente", response_class=HTMLResponse)
-async def get_prestador_visao_cliente(request: Request):
-    return templates.TemplateResponse("pages/prestador_visao_cliente.html", {"request": request})
-
-
 @router.get("/suporte_adm", response_class=HTMLResponse)
 async def get_suporte_adm(request: Request):
     return templates.TemplateResponse("pages/suporte_adm.html", {"request": request})
@@ -80,6 +74,42 @@ async def get_suporte_adm(request: Request):
 async def get_comentario_prestador(request: Request):
     return templates.TemplateResponse("pages/comentario_prestador.html", {"request": request})
 
+@router.get("/comentario_cliente", response_class=HTMLResponse)
+async def get_comentario_cliente(request: Request):
+    return templates.TemplateResponse("pages/comentario_cliente.html", {"request": request})
+
 @router.get("/editar_cliente", response_class=HTMLResponse)
 async def get_editar_cliente(request: Request):
     return templates.TemplateResponse("pages/editar_cliente.html", {"request": request})
+
+@router.get("/editar_prestador", response_class=HTMLResponse)
+async def get_editar_prestador(request: Request):
+    return templates.TemplateResponse("pages/editar_prestador.html", {"request": request})
+
+@router.get("/encerrar_plano", response_class=HTMLResponse)
+async def get_encerrar_plano(request: Request):
+    return templates.TemplateResponse("pages/encerrar_plano.html", {"request": request})
+
+@router.get("/perfil_cliente_vp", response_class=HTMLResponse)
+async def get_perfil_cliente_vp(request: Request):
+    return templates.TemplateResponse("pages/perfil_cliente_vp.html", {"request": request})
+
+@router.get("/perfil_prestador_vp", response_class=HTMLResponse)
+async def get_perfil_prestador_vp(request: Request):
+    return templates.TemplateResponse("pages/perfil_prestador_vp.html", {"request": request})
+
+
+@router.get("/cliente_responde", response_class=HTMLResponse)
+async def get_cliente_responde(request: Request):
+    return templates.TemplateResponse("pages/cliente_responde.html", {"request": request})
+
+
+@router.get("/denuncias_anteriores", response_class=HTMLResponse)
+async def get_denuncias_anteriores(request: Request):
+    return templates.TemplateResponse("pages/denuncias_anteriores.html", {"request": request})
+
+@router.get("/planos", response_class=HTMLResponse)
+async def get_planos(request: Request):
+    return templates.TemplateResponse("pages/planos.html", {"request": request})
+
+
