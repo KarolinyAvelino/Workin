@@ -1,51 +1,44 @@
 {% extends "pages/base.html" %}
 {% block subtitulo %}Editar perfil do prestador{% endblock %}
 {% block conteudo %}
-
 <div class="profile-container">
     <div class="profile-header">
         <img src="static/img/images/harry.jpg" alt="Harry Potter" class="profile-pic">
-        <h2>Harry Potter</h2>
+        <div class="">
+            <h2>Harry James Potter</h2>
+        <div class="rating">★★★★★</div>
+    </div>
         <div class="settings">
-            <span class="stars">★★★★★</span>
             <img src="static/img/images/SETA.png" alt="Settings" class="settings-icon">
         </div>
     </div>
-    
     <div class="form-container">
         <form>
             <h3>Modificar nome</h3>
             <label for="email">Novo nome</label>
             <input type="email" id="email" placeholder="Seu novo nome">
             <p>O seu nome ficará visível para todos que acessarem seu perfil.</p><br>
-            
             <h3>Modificar email</h3>
             <label for="email">Novo email</label>
             <input type="email" id="email" placeholder="Seu novo email">
             <p>Você utilizará esse email para fazer login no Workin. Por favor, insira um email válido.</p><br>
-            
             <h3>Modificar senha</h3>
             <label for="senha">Nova senha</label>
             <input type="password" id="senha" placeholder="Sua nova senha">
-            
             <label for="confirmar-senha">Repita a senha</label>
             <input type="password" id="confirmar-senha" placeholder="Confirme sua nova senha">
             <p>A sua senha deve conter, pelo menos, uma letra, um número e um caracter especial.</p><br>
-
             <h1>Modificar descrição</h1>
             <label for="email">Nova descrição</label>
             <input type="email" id="email" placeholder="Amo animais. Passeio, corro, faço exercícios...."><br>
-
             <h3>Modificar telefone</h3>
             <label for="email">Novo número de telefone</label>
             <input type="email" id="email" placeholder="+55 (00) 99900-0000">
             <p>Insira um número de telefone válido, você usará para se comunicar com seus clientes.<br>
-
             <h3>Modificar cidade</h3>
             <label for="email">Novo número de telefone</label>
             <input type="email" id="email" placeholder="">
             <p>Insira o nome da cidade onde reside.<br>
-            
             <div class="buttons">
                 <button type="button" class="cancel-btn">Cancelar alterações</button>
                 <button type="submit" class="confirm-btn">Confirmar alterações</button>
@@ -53,5 +46,4 @@
         </form>
     </div>
 </div>
-
 {% endblock %}

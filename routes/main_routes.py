@@ -103,13 +103,12 @@ async def get_perfil_prestador_vp(request: Request):
 async def get_cliente_responde(request: Request):
     return templates.TemplateResponse("pages/cliente_responde.html", {"request": request})
 
-
-@router.get("/denuncias_anteriores", response_class=HTMLResponse)
-async def get_denuncias_anteriores(request: Request):
-    return templates.TemplateResponse("pages/denuncias_anteriores.html", {"request": request})
-
 @router.get("/planos", response_class=HTMLResponse)
 async def get_planos(request: Request):
     return templates.TemplateResponse("pages/planos.html", {"request": request})
 
+
+@router.get("/categorias_adm", response_class=HTMLResponse)
+async def get_categorias_adm(request: Request):
+    return templates.TemplateResponse("pages/categorias_adm.html", {"request": request})
 

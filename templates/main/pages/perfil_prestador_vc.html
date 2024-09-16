@@ -2,439 +2,144 @@
 {% block subtitulo %}Perfil prestador, visão cliente{% endblock %}
 {% block conteudo %}
 
-<div class="profile-header">
-    <img src="static/img/images/harry.jpg" alt="Harry Potter" class="profile-picture" width="70" height="70">
-    <div class="profile-info">
-        <h1>Harry James Potter
-            <img src="static/img/logo/engrenagem.png" alt="Icon" class="icon">
-        </h1>
-        <div class="categoriaperfil">Guiador de pets - Um mês atrás</div>
-        <div class="stars">★★★★☆</div>
-    </div>
-    <div class="contact-info">
-        <p><strong>E-mail:</strong> rafaelasandrini@gmail.com</p>
-        <p><strong>Descrição:</strong> Amo animais. Passeio, corro, faço exercícios <span class="ler-mais">LER MAIS...</span></p>
-        <p><strong>Whatsapp:</strong> (28) 999909-9090</p>
-        <p><strong>Cidade:</strong> Cachoeiro de Itapemirim - Paraíso</p>
-    </div>
-</div>
 
-<div class="separator"></div>
-
-<!-- Seção de Trabalhos e Comentários -->
 <div class="container">
-    <div class="profile-section">
-        <div class="comments-section">
-            <h2>Meus Trabalhos:</h2>
-
-            <div class="Imagens-meus-trabalhos">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            <img src="static/img/images/trabalhos.jpg" alt="Trabalho1" width="50" height="50">
-            </div><br>
-
-       <h2>Comentários:</h2> 
-
-            <div class="comment">
-                <img src="static/img/images/edricp.jpg" alt="Comentador" width="50" height="50">
-                <div class="comment-content">
-                    <div class="name">Edrico</div>
-                    <div class="categoria">Guiador de pets - Um mês atrás</div>
-                    <div class="rating">★★★★★</div>
-                    <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
-                    <br>
-                    <div>
-                        <span>2 Likes</span>
-                        <span>Responder</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="comment2">
-                <img src="static/img/images/harry.jpg" alt="Comentador" width="50px" height="50px">
-                <div class="comment-content">
-                    <div class="name">Harry James Potter</div>
-                    <div class="categoria">Respondeu Edrico - Um mês atrás</div>
-                    <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
-                    <br>
-                    <div>
-                        <span>1 Likes</span>
-                        <span>Responder</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="separator" style="width: 700px; margin: 20px 0;"></div>
-
-            <div class="comment">
-                <img src="static/img/images/Dobby.jpeg" alt="Comentador" width="50" height="50">
-                <div class="comment-content">
-                    <div class="name">Robbie Coltrane</div>
-                    <div class="categoria">Jardineiro - Dois meses atrás</div>
-                    <div class="rating">★★★★★</div>
-                    <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
-                    <br>
-                    <div>
-                        <span>11 Likes</span>
-                        <span>Responder</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="separator" style="width: 700px; margin: 20px 0;"></div>
-
-            <div class="comment">
-                <img src="static/img/images/draco.jpg" alt="Comentador" width="50" height="50">
-                <div class="comment-content">
-                    <div class="name">Draco Malfor</div>
-                    <div class="categoria">Baba - Um ano atrás</div>
-                    <div class="rating">★★☆☆☆</div>
-                    <div class="text-wrap">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
-                    <br>
-                    <div>
-                        <span>9 Likes</span>
-                        <span>Responder</span>
-                    </div>
-                </div>
-            </div>
-
+    <div class="row">
+        <div class="col-1">
+            <img src="static/img/images/harry.jpg" alt="Imagem Circular" class="imagem-circular-prfil">
         </div>
-    </div>
-    <div class="dentro">
-        <div class="fundo_calendario">
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Agosto</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
+        <div class="col-2">
 
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-1">
+                        <img src="static/img/images/harry.jpg" alt="Imagem Circular" class="imagem-circular-prfil">
+                    </div>
+                    <div class="col-2">
+        
+                            <div class="info-prfil">
+                                <h1>Harry Potter</h1>
+                                <div class="rating-prfil">
+                                    <h1>★★★★★</h1>
+                                </div>
+                            </div>
+        
+                    </div>
+                    <br>
+                    <div class="col">
+                    </div>
+        
                 </div>
             </div>
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Setembro</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
-
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
+            <br>
+            <hr>
+        
+            <div class="container">
+                <div class="profile-section-prfil">
+                    <div class="comments-section-prfil">
+                        <h2>Comentários:</h2>
+        
+                        <div class="comment-prfil">
+                            <img src="static/img/images/edricp.jpg" alt="Comentador" width="50" height="50">
+                            <div class="comment-content-prfil">
+                                <div class="name-prfil">Edrico</div>
+                                <div class="categoria-prfil">Guiador de pets - Um mês atrás</div>
+                                <div class="rating-prfil">★★★★★</div>
+                                <div class="text-wrap-prfil">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                                <br>
+                                <div>
+                                    <span>2 Likes</span>
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    &#x22EE;
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Denunciar Comentário</a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="comment2-prfil">
+                            <img src="static/img/images/harry.jpg" alt="Comentador" width="50" height="50">
+                            <div class="comment-content-prfil">
+                                <div class="name-prfil">Harry Potter</div>
+                                <div class="categoria-prfil">Respondeu Edrico - Um mês atrás</div>
+                                <div class="text-wrap-prfil">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                                <br>
+                                <div>
+                                    <span>1 Likes</span>
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    &#x22EE;
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Denunciar Comentário</a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="separator-prfil" style="width: 700px; margin: 20px 0;"></div>
+        
+                        <div class="comment-prfil">
+                            <img src="static/img/images/Dobby.jpeg" alt="Comentador" width="50" height="50">
+                            <div class="comment-content-prfil">
+                                <div class="name-prfil">Nome Sobrenome</div>
+                                <div class="categoria-prfil">Jardineiro - Dois meses atrás</div>
+                                <div class="rating-prfil">★★★★★</div>
+                                <div class="text-wrap-prfil">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                                <br>
+                                <div>
+                                    <span>11 Likes</span>
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    &#x22EE;
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Denunciar Comentário</a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="separator-prfil" style="width: 700px; margin: 20px 0;"></div>
+        
+                        <div class="comment-prfil">
+                            <img src="static/img/images/draco.jpg" alt="Comentador" width="50" height="50">
+                            <div class="comment-content-prfil">
+                                <div class="name-prfil">Nome Sobrenome</div>
+                                <div class="categoria-prfil">Baba - Um ano atrás</div>
+                                <div class="rating-prfil">★★☆☆☆</div>
+                                <div class="text-wrap-prfil">Lorem ipsum dolor sit amet. Est doloribus architecto cum recusandae voluptatem et necessitatibus nihil est commodi explicabo est veritatis aspernatur a culpa praesentium qui harum magnam. Id saepe quod et deserunt nihil et dolorem beatae qui voluptatem nihil est ipsam officia.</div>
+                                <br>
+                                <div>
+                                    <span>9 Likes</span>
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    &#x22EE;
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Denunciar Comentário</a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
                 </div>
-
-            </div>
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Outubro</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
-
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
-                </div>
-            </div>
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Novembro</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
-
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
+        
+                <div class="ad-section-prfil">
+                    <img src="static/img/images/propaganda.PNG" alt="Propaganda">
                 </div>
             </div>
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Dezembro</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
-
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
-                </div>
-            </div>
-            <div class="calendario">
-                <br>
-                <div class="nome-mês">Janeiro</div>
-                <div class="calendario-separador"></div>
-                <div class="calendar">
-                    <div class="day-name">Seg</div>
-                    <div class="day-name">Ter</div>
-                    <div class="day-name">Qua</div>
-                    <div class="day-name">Qui</div>
-                    <div class="day-name">Sex</div>
-                    <div class="day-name">Sab</div>
-                    <div class="day-name">Dom</div>
-
-
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-                    <div class="day"></div>
-
-
-                    <div class="day">1</div>
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-                    <div class="day">30</div>
-                    <div class="day">31</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.querySelectorAll('.day').forEach(day => {
-        day.addEventListener('click', () => {
-            day.classList.toggle('clicked');
-        });
-    });
-</script>
-
 
 {% endblock %}

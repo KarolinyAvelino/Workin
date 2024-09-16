@@ -1,17 +1,16 @@
 {% extends "pages/base.html" %}
 {% block subtitulo %}Dados do cartão{% endblock %}
 {% block conteudo %}
-
 <div class="container">
     <div class="payment-container shadow-lg">
         <div class="text-center mb-4">
             <span class="payment-title">R$29,99 / mês</span>
         </div>
         <h5>Informe os dados do seu cartão de crédito ou débito</h5>
-        <div class="card-logo mb-3">
+        <div class="card-logo mb-3" >
             <img src="static/img/images/cartao.png.jpeg" width="600" height="100" alt="Cartão">
         </div>
-
+        <div class="separator"  style="margin: 20px;" ></div>
         <form>
             <div class="mb-3 payment-input">
                 <label for="card-number" class="form-label">Número do cartão</label>
@@ -37,7 +36,7 @@
                 <input type="text" class="form-control" id="cardholder-name" placeholder="Nome completo">
             </div>
             <h5>Forma de pagamento preferida</h5>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline mt-3">
                 <input class="form-check-input" type="radio" name="paymentMethod" id="credit" value="credit" checked>
                 <label class="form-check-label" for="credit">Crédito</label>
             </div>
@@ -50,10 +49,8 @@
                 Cartões habilitados para operações de crédito e débito podem ser utilizados de ambas as maneiras.
                 Ao pressionar o botão “Ativar assinatura” abaixo, você está aceitando nossos Termos de Serviço e nossa Política de Privacidade, confirmando que é maior de 18 anos e concordando que o Workin possa renovar sua assinatura automaticamente e cobrar o valor da assinatura (atualmente R$ 29,99/mês) do seu método de pagamento até que você faça o cancelamento. Você tem a liberdade de cancelar a qualquer momento para evitar cobranças futuras. Para fazer isso, acesse o seu perfil e selecione “Encerrar assinatura”.
             </p>
-
             <button type="submit" class="btn btn-custom btn-block w-100">ATIVAR ASSINATURA</button>
         </form>
     </div>
 </div>
-
 {%  endblock %}

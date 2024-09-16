@@ -1,7 +1,6 @@
 {% extends "pages/base.html" %}
-{% block subtitulo %}Cadastro prestador{% endblock %}
+{% block subtitulo %}Prestador comentando{% endblock %}
 {% block conteudo %}
-
 <div class="comment-container" id="comment-box">
     <div class="d-flex align-items-center mb-3">
         <img src="static/img/images/image (8).png" alt="Perfil" class="profile-img">
@@ -16,18 +15,15 @@
             </div>
         </div>
     </div>
-
     <div class="mb-3">
         <textarea class="form-control" rows="4" placeholder="Compartilhe sua experiência..."></textarea>
     </div>
     <div class="text-muted small mb-3">
         O seu comentário será publicado de forma aberta no Workin.
     </div>
-
     <div class="d-flex justify-content-center">
         <button class="btn btn-cancel me-2" id="cancel-btn">Cancelar</button>
         <button class="btn btn-publish" id="publish-btn">Publicar</button>
     </div>
 </div>
-
 {% endblock %}

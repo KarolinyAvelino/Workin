@@ -1,0 +1,87 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Prestador acessa categorias{% endblock %}
+{% block conteudo %}
+<div class="container">
+    <div class="menu">
+        <div class="header">
+            <div class="texto"><span>Categorias</span></div>
+            <div class="icons">
+                <button class="edit-icon">&#9998;</button>
+                <button class="add-icon">&#43;</button>
+            </div>
+        </div>
+
+        <div class="category">
+            <button class="category-toggle">&#9660;</button>
+            <span>Passador de pets</span>
+            <div class="m-3">
+                <ul class="sub-menu ">
+                    <li><img src="static/img/images/image (2).png" alt="Bruno Pereira"><span>Bruno Pereira</span><span class="status-dot"></span></li>
+                    <li><img src="static/img/images/image (5).png" alt="Pedro Martins"><span>Pedro Martins</span><span class="status-dot"></span></li>
+                    <li><img src="static/img/images/image (4).png" alt="Gabriela Silva"><span>Gabriela Silva</span><span class="status-dot"></span></li>
+                    <li><img src="static/img/images/image (6).png" alt="Daniel Santos"><span>Daniel Santos</span><span class="status-dot"></span></li>
+                    <li><img src="static/img/images/image (7).png" alt="João Castro"><span>João Castro</span><span class="status-dot"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9660;</button>
+            <span>Limpeza</span>
+            <div class="m-3">
+                <ul class="sub-menu">
+                    <li><img src="static/img/images/image (8).png" alt="Bruno Pereira"><span>Bruno Pereira</span><span class="status-dot"></span></li>
+                    <li><img src="static/img/images/image (9).png" alt="Pedro Martins"><span>Pedro Martins</span><span class="status-dot"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9660;</button>
+            <span>Serviços Domésticos</span>
+            <div class="m-3">
+                <ul class="sub-menu">
+                    <li><img src="static/img/images/image (10).png" alt="Bruno Pereira"><span>Bruno Pereira</span><span class="status-dot"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9654;</button>
+            <span>Cuidador</span>
+            <ul class="sub-menu"></ul>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9654;</button>
+            <span>Beleza</span>
+            <ul class="sub-menu"></ul>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9654;</button>
+            <span>Jardineiro</span>
+            <ul class="sub-menu"></ul>
+        </div>
+        <div class="category">
+            <button class="category-toggle">&#9654;</button>
+            <span>Informática</span>
+            <ul class="sub-menu"></ul>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal">
+        <h3>Adicionar nova categoria</h3>
+        <input type="text" id="new-category-name" placeholder="Nome da nova categoria">
+        <div class="modal-buttons">
+            <button>Confirmar</button>
+            <button>Cancelar</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="edit-modal">
+        <h3>Editar categorias</h3>
+        <div class="edit-modal-content">
+        </div>
+        <div class="edit-modal-buttons">
+            <button>Cancelar</button>
+            <button>Confirmar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
