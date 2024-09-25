@@ -29,7 +29,7 @@ async def get_perfil_cliente(request: Request):
     return templates.TemplateResponse("pages/perfil_cliente_vc.html", {"request": request})
 
 @router.get("/perfil_prestador_vc", response_class=HTMLResponse)
-async def get_perfil_prestador(request: Request):
+async def get_perfil_prestador_vc(request: Request):
     return templates.TemplateResponse("pages/perfil_prestador_vc.html", {"request": request})
 
 @router.get("/barra_pesquisa", response_class=HTMLResponse)

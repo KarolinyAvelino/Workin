@@ -4,7 +4,6 @@ from models.usuario_model import Usuario
 from repositories.usuario_repo import UsuarioRepo
 from util.cookies import NOME_COOKIE_AUTH, adicionar_cookie_auth
 
-
 async def obter_usuario_logado(request: Request) -> Optional[Usuario]:
     try:
         token = request.cookies[NOME_COOKIE_AUTH]
@@ -32,7 +31,7 @@ async def checar_permissao(request: Request):
     usuario = request.state.usuario if hasattr(request.state, "usuario") else None
     area_do_usuario = request.url.path.startswith("/usuario")
     area_do_admin = request.url.path.startswith("/admin")    
-    if (area_do_usuario or area_do_admin) and not usuario:
+    if (area_do_usuario or area_do_admin) and (not usuario or not usuario.perfil):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
     if area_do_usuario and usuario.perfil != 1:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
