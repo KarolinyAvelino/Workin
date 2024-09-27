@@ -1,5 +1,9 @@
-from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, Form, Request, status
+from fastapi.responses import RedirectResponse
+from fastapi.templating import Jinja2Templates
+from models.usuario_model import Usuario
+from repositories.usuario_repo import UsuarioRepo
 
 from util.templates import obter_jinja_templates
 
@@ -14,6 +18,47 @@ async def get_root(request: Request):
 @router.get("/cadastro_prestador", response_class=HTMLResponse)
 async def get_cadastro_prestador(request: Request):
     return templates.TemplateResponse("pages/cadastro_prestador.html", {"request": request})
+
+@router.get("/cadastro_cliente", response_class=HTMLResponse)
+async def get_cadastro_cliente(request: Request):
+    return templates.TemplateResponse("pages/cadastro_cliente.html", {"request": request})
+
+
+
+@router.post("/post_cadastro_prestador", response_class=HTMLResponse)
+async def post_cadastro_prestador(
+    nome: str = Form(...),
+    email: str = Form(...),
+    telefone: str = Form(...),
+    categoria: str = Form(...),
+    especialidade: str = Form(...),
+    senha: str = Form(...),
+    confirmaSenha: str = Form(...),
+    perfil: int = Form(...)):
+    if senha != confirmaSenha:
+        return RedirectResponse("/post_cadastro_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    senha_hash = obter_hash_senha(senha)
+    usuario = Usuario(None, nome, email, telefone, categoria, especialidade, senha_hash, None, perfil)
+    UsuarioRepo.inserir(usuario)
+    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+
+
+@router.post("/post_cadastro_cliente", response_class=HTMLResponse)
+async def post_cadastro_cliente(
+    nome: str = Form(...),
+    email: str = Form(...),
+    telefone: str = Form(...),
+    senha: str = Form(...),
+    confirmaSenha: str = Form(...),
+    perfil: int = Form(...)):
+    if senha != confirmaSenha:
+        return RedirectResponse("/post_cadastro_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    senha_hash = obter_hash_senha(senha)
+    usuario = Usuario(None, nome, email, telefone, senha_hash, None, perfil)
+    UsuarioRepo.inserir(usuario)
+    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+
+
 
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
@@ -39,10 +84,6 @@ async def get_barra_pesquisa(request: Request):
 @router.get("/reenviar_codigo", response_class=HTMLResponse)
 async def get_reenviar_codigo(request: Request):
     return templates.TemplateResponse("pages/reenviar_codigo.html", {"request": request})
-
-@router.get("/cadastro_cliente", response_class=HTMLResponse)
-async def get_cadastro_cliente(request: Request):
-    return templates.TemplateResponse("pages/cadastro_cliente.html", {"request": request})
 
 @router.get("/suporte", response_class=HTMLResponse)
 async def get_suporte(request: Request):

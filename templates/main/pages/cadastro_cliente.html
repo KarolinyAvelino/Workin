@@ -4,36 +4,38 @@
 <div class="payment-container ">
     <div class="row justify-content-center">
         <div class="col-md">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Seja um cliente Workin!</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeCompleto">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeCompleto" >
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" >
-                        </div>
-                        <div class="form-group">
-                            <label for="telefone">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" >
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmaSenha">Confirmar senha</label>
-                            <input type="password" class="form-control" id="confirmaSenha" >
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
-                        </div>
-                    </form>
+            <form action="/post_cadastro_cliente" method="post">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Seja um cliente Workin!</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="nomeCompleto">Nome Completo</label>
+                                <input type="text" class="form-control" id="nomeCompleto" >
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" class="form-control" id="email" >
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" >
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmaSenha">Confirmar senha</label>
+                                <input type="password" class="form-control" id="confirmaSenha" >
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

@@ -3,27 +3,24 @@ SQL_CRIAR_TABELA = """
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
+        telefone TEXT NOT NULL UNIQUE,  
+        categoria TEXT,
+        especialidade TEXT,
         senha TEXT NOT NULL,
-        perfil INT NOT NULL,        
-        token TEXT)
+        perfil INT NOT NULL)
 """
 
 SQL_INSERIR = """
-    INSERT INTO usuario(id, nome, email, senha, perfil)
-    VALUES (?, ?, ?)
+    INSERT INTO usuario(nome, email, telefone, categoria, especialidade, senha, perfil)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
 """
 
 SQL_ALTERAR = """
     UPDATE usuario
-    SET nome=?, email=?
+    SET nome=?, email=?, telefone=?, categoria=?, especialidade=?
     WHERE id=?
 """
 
-SQL_ALTERAR_TOKEN = """
-    UPDATE usuario
-    SET token=?
-    WHERE id=?
-"""
 
 SQL_EXCLUIR = """
     DELETE FROM usuario    
@@ -31,22 +28,17 @@ SQL_EXCLUIR = """
 """
 
 SQL_OBTER_POR_ID = """
-    SELECT id, nome, email, perfil, token
+    SELECT id, nome, email, telefone, categoria, especialidade, perfil
     FROM usuario
     WHERE id=?
 """
 
 SQL_OBTER_POR_EMAIL = """
-    SELECT id, nome, email, perfil, token
+    SELECT id, nome, email, telefone, categoria, especialidade, perfil
     FROM usuario
     WHERE id=?
 """
 
-SQL_OBTER_POR_TOKEN = """
-    SELECT id, nome, email, perfil, token
-    FROM usuario
-    WHERE token=?
-"""
 
 SQL_OBTER_QUANTIDADE = """
     SELECT COUNT(*)
