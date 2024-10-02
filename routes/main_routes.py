@@ -2,9 +2,12 @@ from fastapi.responses import HTMLResponse
 from fastapi import APIRouter, Form, Request, status
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
+from Workin.util.auth import conferir_senha, obter_hash_senha
 from models.usuario_model import Usuario
 from repositories.usuario_repo import UsuarioRepo
 
+from util.auth import criar_token
+from util.cookies import NOME_COOKIE_AUTH
 from util.templates import obter_jinja_templates
 
 router = APIRouter()
@@ -23,8 +26,6 @@ async def get_cadastro_prestador(request: Request):
 async def get_cadastro_cliente(request: Request):
     return templates.TemplateResponse("pages/cadastro_cliente.html", {"request": request})
 
-
-
 @router.post("/post_cadastro_prestador", response_class=HTMLResponse)
 async def post_cadastro_prestador(
     nome: str = Form(...),
@@ -42,7 +43,6 @@ async def post_cadastro_prestador(
     UsuarioRepo.inserir(usuario)
     return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
 
-
 @router.post("/post_cadastro_cliente", response_class=HTMLResponse)
 async def post_cadastro_cliente(
     nome: str = Form(...),
@@ -58,15 +58,57 @@ async def post_cadastro_cliente(
     UsuarioRepo.inserir(usuario)
     return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
 
-
-
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
     return templates.TemplateResponse("pages/login.html", {"request": request})
 
+@router.post("/post_login", response_class=HTMLResponse)
+async def post_login(
+    email: str = Form(...),
+    senha: str = Form(...)):
+    usuario = UsuarioRepo.obter_por_email(email)
+    if not usuario:
+        return RedirectResponse("/login", status_code=status.HTTP_303_SEE_OTHER)
+    if conferir_senha(senha, usuario.senha):
+        token = criar_token(usuario.id, usuario.nome, usuario.email, usuario.perfil, usuario.telefone, usuario.categoria, usuario.especialidade, usuario.id,)
+        nome_perfil = None
+        match (usuario.perfil):
+            case 1: nome_perfil = "cliente"
+            case 2: nome_perfil = "prestador"
+            case _: nome_perfil = ""
+        
+        response = RedirectResponse(f"/{nome_perfil}", status_code=status.HTTP_303_SEE_OTHER)    
+        response.set_cookie(
+            key=NOME_COOKIE_AUTH,
+            value=token,
+            max_age=3600*24*365*10,
+            httponly=True,
+            samesite="lax"
+        )
+        return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+
+
+
+
 @router.get("/redefinir_senha", response_class=HTMLResponse)
 async def get_redefinir(request: Request):
     return templates.TemplateResponse("pages/redefinir_senha.html", {"request": request})
+
+@router.post("/post_redefinir_senha")
+async def post_redefinir_senha(
+    request: Request, 
+    senha_atual: str = Form(...),    
+    nova_senha: str = Form(...),
+    conf_nova_senha: str = Form(...)):
+    id_usuario = request.state.usuario.id
+    usuario = UsuarioRepo.obter_por_id(id_usuario)    
+    if nova_senha == conf_nova_senha and conferir_senha(senha_atual, usuario.senha):
+        UsuarioRepo.atualizar_senha(id_usuario, obter_hash_senha(nova_senha))
+    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+
+
+
+
 
 
 @router.get("/perfil_cliente_vc", response_class=HTMLResponse)
