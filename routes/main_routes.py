@@ -5,7 +5,6 @@ from fastapi.templating import Jinja2Templates
 from Workin.util.auth import conferir_senha, obter_hash_senha
 from models.usuario_model import Usuario
 from repositories.usuario_repo import UsuarioRepo
-
 from util.auth import criar_token
 from util.cookies import NOME_COOKIE_AUTH
 from util.templates import obter_jinja_templates
@@ -87,9 +86,6 @@ async def post_login(
         )
         return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
 
-
-
-
 @router.get("/redefinir_senha", response_class=HTMLResponse)
 async def get_redefinir(request: Request):
     return templates.TemplateResponse("pages/redefinir_senha.html", {"request": request})
@@ -105,10 +101,6 @@ async def post_redefinir_senha(
     if nova_senha == conf_nova_senha and conferir_senha(senha_atual, usuario.senha):
         UsuarioRepo.atualizar_senha(id_usuario, obter_hash_senha(nova_senha))
     return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
-
-
-
-
 
 
 @router.get("/perfil_cliente_vc", response_class=HTMLResponse)
