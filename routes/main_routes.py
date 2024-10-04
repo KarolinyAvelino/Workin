@@ -2,7 +2,7 @@ from fastapi.responses import HTMLResponse
 from fastapi import APIRouter, Form, Request, status
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
-from Workin.util.auth import conferir_senha, obter_hash_senha
+from util.auth import conferir_senha, obter_hash_senha
 from models.usuario_model import Usuario
 from repositories.usuario_repo import UsuarioRepo
 from util.auth import criar_token
@@ -33,14 +33,20 @@ async def post_cadastro_prestador(
     categoria: str = Form(...),
     especialidade: str = Form(...),
     senha: str = Form(...),
-    confirmaSenha: str = Form(...),
-    perfil: int = Form(...)):
-    if senha != confirmaSenha:
-        return RedirectResponse("/post_cadastro_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    confirma_senha: str = Form(...)):
+    if senha != confirma_senha:
+        return RedirectResponse("/cadastro_prestador", status_code=status.HTTP_303_SEE_OTHER)
     senha_hash = obter_hash_senha(senha)
-    usuario = Usuario(None, nome, email, telefone, categoria, especialidade, senha_hash, None, perfil)
+    usuario = Usuario(
+        nome=nome, 
+        email=email, 
+        telefone=telefone, 
+        categoria=categoria, 
+        especialidade=especialidade, 
+        senha=senha_hash, 
+        perfil=2)
     UsuarioRepo.inserir(usuario)
-    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse("/login", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.post("/post_cadastro_cliente", response_class=HTMLResponse)
 async def post_cadastro_cliente(
@@ -48,14 +54,18 @@ async def post_cadastro_cliente(
     email: str = Form(...),
     telefone: str = Form(...),
     senha: str = Form(...),
-    confirmaSenha: str = Form(...),
-    perfil: int = Form(...)):
-    if senha != confirmaSenha:
-        return RedirectResponse("/post_cadastro_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    confirma_senha: str = Form(...)):
+    if senha != confirma_senha:
+        return RedirectResponse("/cadastro_cliente", status_code=status.HTTP_303_SEE_OTHER)
     senha_hash = obter_hash_senha(senha)
-    usuario = Usuario(None, nome, email, telefone, senha_hash, None, perfil)
+    usuario = Usuario(
+        nome=nome, 
+        email=email, 
+        telefone=telefone,
+        senha=senha_hash,
+        perfil=1)
     UsuarioRepo.inserir(usuario)
-    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse("/login", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):

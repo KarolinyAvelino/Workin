@@ -45,12 +45,14 @@ class UsuarioRepo:
                 cursor.execute(
                     SQL_ALTERAR,
                     (
+                        usuario.id,
                         usuario.nome,
                         usuario.email,
                         usuario.telefone,
                         usuario.categoria,
                         usuario.especialidade,
-                        usuario.id,
+                        usuario.perfil,
+                        
                     ),
                 )
                 return cursor.rowcount > 0
