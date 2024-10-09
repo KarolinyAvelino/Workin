@@ -2,7 +2,7 @@
 {% block subtitulo %}Login{% endblock %}
 {% block conteudo %}
 
-<div class="payment-container ">
+<div class="payment-container">
     <div class="row justify-content-center">
         <div class="col-md">
             <div class="card">
@@ -11,14 +11,17 @@
                     <form method="post" action="/post_login">                      
                         <div class="form-group m-2">
                             <label for="email">E-mail</label>
-                            <input type="text" name="email" class="form-control" required>
+                            <input type="text" id="email" name="email" class="form-control" required>
                         </div>                                         
                         <div class="form-group m-2">
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" class="form-control" required>
+                            <input type="password" id="senha" name="senha" class="form-control" required>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn m-4 botao-login">Entrar</button>
+                        </div>
+                        <div class="text-center">
+                            <a href="/redefinir_senha" class="d-block m-2">Esqueci a senha</a>
                         </div>
                     </form>
                 </div>
@@ -26,5 +29,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock %}

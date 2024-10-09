@@ -4,48 +4,51 @@
 <div class="payment-container ">
     <div class="row justify-content-center">
         <div class="col-md">
-            <form action="/post_cadastro_prestador" method="post"></form>
+            <form action="/post_cadastro_prestador" method="post">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title text-center">Seja um profissional Workin!</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="nomeCompleto">Nome Completo</label>
-                                <input type="text" class="form-control" id="nomeCompleto" name="nome" >
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control" id="telefone" name="telefone">
-                            </div>
-                            <div class="form-group">
-                                <label for="categoria">Categoria</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Escolha a sua categoria</option>
-                                    <option value="1">Limpeza</option>
-                                    <option value="2">Beleza</option>
-                                    <option value="3">Cuidador</option>  
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="especialidade">Especialidade</label>
-                                <input type="text" class="form-control" id="especialidade" name="especialidade" >
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha</label>
-                                <input type="password" class="form-control" id="senha" name="senha">
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmaSenha">Confirmar senha</label>
-                                <input type="password" class="form-control" id="confirmaSenha" name="confirma_senha" >
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
-                            </div>
-                        </form>
+                        <div class="form-group">
+                            <label for="nomeCompleto">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeCompleto" name="nome" >
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" class="form-control" id="telefone" name="telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Escolha a sua categoria</option>
+                                <option value="1">Limpeza</option>
+                                <option value="2">Beleza</option>
+                                <option value="3">Cuidador</option>  
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade</label>
+                            <input type="text" class="form-control" id="especialidade" name="especialidade" >
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="senha">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmaSenha">Confirmar senha</label>
+                            <input type="password" class="form-control" id="confirmaSenha" name="confirma_senha" >
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
+                        </div>
+                        <div class="text-center">
+                            <a href="/redefinir_senha" class="d-block m-2">Esqueci a senha</a>
+                            <a href="/login" class="d-block m-2">Login</a>
+                        </div>
+                    
                     </div>
                 </div>
             </form>    

@@ -5,22 +5,22 @@
 <div class="payment-container ">
     <div class="row justify-content-center">
         <div class="col-md">
-            <div class="card">
-                <div class="card-body ">
-                    <h3 class="card-title text-left  m-4">Redefinição de Senha</h3>
-                    <form>
-                      <p class="m-4"> Digite seu e-mail no campo abaixo e lhe enviaremos instruções para redefinição de senha.
-                      </P>
-                        <div class="form-group m-lg-5 ">
-                            <input type="email" class="form-control " id="email" name="email" placeholder="E-mail">
-                        </div>
-                                         
-                        <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-block m-2 botao-login " >Redefinir</button>
-                        </div>
-                    </form>
+            <form action="/post_redefinir_senha" method="post">
+                <div class="card">
+                    <div class="card-body ">
+                        <h3 class="card-title text-left  m-4">Redefinição de Senha</h3>
+                        <form>
+                        <p class="m-4"> Digite seu e-mail no campo abaixo e lhe enviaremos instruções para redefinição de senha.
+                        </P>
+                            <div class="form-group m-lg-5 ">
+                                <input type="email" class="form-control " id="email" name="email" placeholder="E-mail">
+                            </div>                 
+                            <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block m-2 botao-login " href="/redefinir_senha" >Redefinir</button>
+                            </div>
+                    </div>
                 </div>
-            </div>
+            </form>    
         </div>
     </div>
 </div>

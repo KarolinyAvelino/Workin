@@ -65,7 +65,7 @@ async def post_cadastro_cliente(
         senha=senha_hash,
         perfil=1)
     UsuarioRepo.inserir(usuario)
-    return RedirectResponse("/login", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse("/perfil_cliente_vc", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
@@ -94,7 +94,7 @@ async def post_login(
             httponly=True,
             samesite="lax"
         )
-        return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+        return RedirectResponse("/perfil_", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/redefinir_senha", response_class=HTMLResponse)
 async def get_redefinir(request: Request):
@@ -110,7 +110,9 @@ async def post_redefinir_senha(
     usuario = UsuarioRepo.obter_por_id(id_usuario)    
     if nova_senha == conf_nova_senha and conferir_senha(senha_atual, usuario.senha):
         UsuarioRepo.atualizar_senha(id_usuario, obter_hash_senha(nova_senha))
-    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse("/reenviar_codigo", status_code=status.HTTP_303_SEE_OTHER)
+
+
 
 
 @router.get("/perfil_cliente_vc", response_class=HTMLResponse)
@@ -125,9 +127,25 @@ async def get_perfil_prestador_vc(request: Request):
 async def get_barra_pesquisa(request: Request):
     return templates.TemplateResponse("pages/barra_pesquisa.html", {"request": request})
 
+
+
 @router.get("/reenviar_codigo", response_class=HTMLResponse)
 async def get_reenviar_codigo(request: Request):
     return templates.TemplateResponse("pages/reenviar_codigo.html", {"request": request})
+
+@router.post("/post_reenviar_codigo")
+async def post_reenviar_codigo(
+    request: Request, 
+    codigo: str = Form(...),    
+    nova_senha: str = Form(...),
+    conf_nova_senha: str = Form(...)):
+    id_usuario = request.state.usuario.id
+    usuario = UsuarioRepo.obter_por_id(id_usuario)    
+    if nova_senha == conf_nova_senha and conferir_senha(codigo,nova_senha,conf_nova_senha, usuario.senha):
+        UsuarioRepo.atualizar_senha(id_usuario, obter_hash_senha(nova_senha))
+    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+
+
 
 @router.get("/suporte", response_class=HTMLResponse)
 async def get_suporte(request: Request):

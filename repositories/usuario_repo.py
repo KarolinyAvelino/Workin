@@ -20,8 +20,7 @@ class UsuarioRepo:
                 cursor = conexao.cursor()
                 cursor.execute(
                     SQL_INSERIR,
-                    (
-                        usuario.id,
+                    (                        
                         usuario.nome,
                         usuario.email,
                         usuario.telefone,
@@ -44,15 +43,14 @@ class UsuarioRepo:
                 cursor = conexao.cursor()
                 cursor.execute(
                     SQL_ALTERAR,
-                    (
-                        usuario.id,
+                    (                        
                         usuario.nome,
                         usuario.email,
                         usuario.telefone,
                         usuario.categoria,
                         usuario.especialidade,
                         usuario.perfil,
-                        
+                        usuario.id,
                     ),
                 )
                 return cursor.rowcount > 0
