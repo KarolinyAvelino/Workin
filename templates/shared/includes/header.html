@@ -24,7 +24,7 @@
                     <a class="nav-link text-nav fs-5" href="/suporte">Suporte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-nav fs-3" href="/">
+                    <a class="nav-link text-nav fs-3" href="/login">
                         <i class="bi bi-person-circle"></i>
                     </a>
                 </li>
@@ -32,14 +32,19 @@
         </div>
 
         <!-- Barra de busca -->
-        <form action="/cadastrarnews" method="post" class="d-flex ms-auto">
+        <form action="/barra_pesquisa" method="get" class="d-flex ms-auto">
             <div class="input-group">
-                <input type="email" class="form-control rounded-start-5 border-custom border-3 border-end-0" style="width: 200px; height: 100%; height: 100%;" placeholder="Digite o termo da busca aqui" id="busca" />
-                <button class="btn btn-custom rounded-end-5 border-custom border-3 border-start-0" type="submit" style="height:  36px; margin-top:auto">
+                <input type="text" class="form-control rounded-start-5 border-custom border-3 border-end-0" 
+                       style="width: 200px; height: 100%;" 
+                       placeholder="Digite o termo da busca aqui" 
+                       id="busca" name="busca" />
+                <button class="btn btn-custom rounded-end-5 border-custom border-3 border-start-0" 
+                        type="submit" style="height: 36px; margin-top:auto">
                     <i class="bi bi-search"></i>
                 </button>
             </div>
         </form>
+        
     </div>
 </nav>
 

@@ -2,8 +2,8 @@ import datetime
 import os
 from typing import Optional
 import bcrypt
-import jwt
 from fastapi import HTTPException, Request, status
+import jwt
 from models.usuario_model import Usuario
 from repositories.usuario_repo import UsuarioRepo
 from util.cookies import NOME_COOKIE_AUTH, adicionar_cookie_auth
