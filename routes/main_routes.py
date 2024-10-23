@@ -129,7 +129,7 @@ async def post_cadastro_cliente(
         senha=senha_hash,
         perfil=1)
     UsuarioRepo.inserir(usuario)
-    return RedirectResponse("/perfil_cliente_vc", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse("/perfil_cliente", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/cadastro_prestador", response_class=HTMLResponse)
 async def get_cadastro_prestador(request: Request):

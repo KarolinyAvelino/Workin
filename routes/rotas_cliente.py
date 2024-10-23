@@ -14,22 +14,22 @@ router = APIRouter(prefix="/cliente")
 templates = obter_jinja_templates("templates")
 
 
-@router.get("/perfil_cliente_vc", response_class=HTMLResponse)
+@router.get("/perfil_cliente", response_class=HTMLResponse)
 async def get_perfil_cliente(request: Request):
-    return templates.TemplateResponse("main/pages/perfil_cliente_vc.html", {"request": request})
+    return templates.TemplateResponse("cliente/pages/perfil_cliente.html", {"request": request})
 
-@router.get("/perfil_prestador_vc", response_class=HTMLResponse)
-async def perfil_prestador_vc(request: Request):
-    return templates.TemplateResponse("main/pages/perfil_prestador_vc.html", {"request": request})
+@router.get("/perfil_prestador", response_class=HTMLResponse)
+async def perfil_prestador(request: Request):
+    return templates.TemplateResponse("cliente/pages/perfil_prestador.html", {"request": request})
 
 @router.get("/demanda_cliente", response_class=HTMLResponse)
 async def get_demanda_cliente(request: Request):
-    return templates.TemplateResponse("main/pages/demanda_cliente.html", {"request": request})
+    return templates.TemplateResponse("cliente/pages/demanda_cliente.html", {"request": request})
 
 @router.get("/comentario_cliente", response_class=HTMLResponse)
 async def get_comentario_cliente(request: Request):
-    return templates.TemplateResponse("main/pages/comentario_cliente.html", {"request": request})
+    return templates.TemplateResponse("cliente/pages/comentario_cliente.html", {"request": request})
 
 @router.get("/editar_cliente", response_class=HTMLResponse)
 async def get_editar_cliente(request: Request):
-    return templates.TemplateResponse("main/pages/editar_cliente.html", {"request": request})
+    return templates.TemplateResponse("cliente/pages/editar_cliente.html", {"request": request})
