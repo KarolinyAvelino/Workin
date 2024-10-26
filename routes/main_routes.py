@@ -18,6 +18,7 @@ templates = obter_jinja_templates("templates")
 async def get_root(request: Request):
     return templates.TemplateResponse("main/pages/index.html", {"request": request})
 
+
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
     return templates.TemplateResponse("main/pages/login.html", {"request": request})
@@ -68,7 +69,7 @@ async def post_login(
         return response
 
 @router.get("/redefinir_senha", response_class=HTMLResponse)
-async def get_redefinir(request: Request):
+async def get_redefinir_senha(request: Request):
     return templates.TemplateResponse("main/pages/redefinir_senha.html", {"request": request})
 
 @router.post("/post_redefinir_senha")
@@ -157,3 +158,25 @@ async def post_cadastro_prestador(
         perfil=2)
     UsuarioRepo.inserir(usuario)
     return RedirectResponse("/planos", status_code=status.HTTP_303_SEE_OTHER)
+
+
+@router.get("/404")
+async def get_not_found(request: Request):
+    return templates.TemplateResponse("pages/404.html", {"request": request})
+
+@router.get("/perfil_cliente", response_class=HTMLResponse)
+async def get_perfil_cliente(request: Request):
+    return templates.TemplateResponse("cliente/pages/perfil_cliente.html", {"request": request})
+
+@router.get("/sair")
+async def get_sair():
+    response = RedirectResponse("/login", status_code=status.HTTP_307_TEMPORARY_REDIRECT)
+    response.set_cookie(
+        key=NOME_COOKIE_AUTH,
+        value="",
+        max_age=1,
+        httponly=True,
+        samesite="lax")
+    return response
+
+

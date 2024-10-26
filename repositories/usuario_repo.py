@@ -9,9 +9,13 @@ from util.database import obter_conexao
 class UsuarioRepo:
     @classmethod
     def criar_tabela(cls):
-        with obter_conexao() as conexao:
-            cursor = conexao.cursor()
-            cursor.execute(SQL_CRIAR_TABELA)
+        try:
+            with obter_conexao() as conexao:
+                cursor = conexao.cursor()
+                cursor.execute(SQL_CRIAR_TABELA)
+                conexao.commit()
+        except sqlite3.Error as ex:
+            print(f"Erro ao criar tabela: {ex}")
 
     @classmethod
     def inserir(cls, usuario: Usuario) -> Optional[Usuario]:
@@ -20,7 +24,7 @@ class UsuarioRepo:
                 cursor = conexao.cursor()
                 cursor.execute(
                     SQL_INSERIR,
-                    (                        
+                    (
                         usuario.nome,
                         usuario.email,
                         usuario.telefone,
@@ -30,12 +34,16 @@ class UsuarioRepo:
                         usuario.perfil,
                     ),
                 )
+                conexao.commit()  # Importante para confirmar a transação
                 if cursor.rowcount > 0:
                     return usuario
+                else:
+                    print("Nenhum registro foi inserido.")
         except sqlite3.Error as ex:
-            print(ex)
-            return None
-
+            print(f"Erro ao inserir usuário: {ex}")
+            
+            
+        return None
     @classmethod
     def alterar(cls, usuario: Usuario) -> bool:
         try:

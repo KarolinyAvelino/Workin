@@ -16,47 +16,14 @@ templates = obter_jinja_templates("templates")
 
 @router.get("/planos", response_class=HTMLResponse)
 async def get_planos(request: Request):
-    planos = [
-        {
-            "nome": "Plano Gratuito",
-            "preco": "R$0,00",
-            "descricao": "RECURSOS LIMITADOS",
-            "recursos": [
-                "✔ Limite de 3 Fotos",
-                "✔ Agenda de Serviços",
-                "✔ Feedback",
-                "✔ Sistema de Mensagens",
-                "✔ Avaliações e Comentários",
-                "✖ Suporte",
-                "✖ Fotos Ilimitadas",
-                "✖ Maior Visibilidade",
-                "✖ Análises e Relatórios",
-                "✖ Visualização de Ofertas Locais"
-            ],
-            "link": "/perfil_prestador"  
-        },
-        {
-            "nome": "Plano Pago + 1 mês grátis",
-            "preco": "R$29,99",
-            "descricao": "por mês",
-            "recursos": [
-                "✔ Maior Visibilidade",
-                "✔ Fotos Ilimitadas",
-                "✔ Destaque em Outros Perfis",
-                "✔ Agenda de Serviços",
-                "✔ Feedback",
-                "✔ Análises e Relatórios",
-                "✔ Perfil Verificado",
-                "✔ Suporte",
-                "✔ Visualização de Ofertas Locais",
-                "✔ Prioridade nas Solicitações"
-            ],
-            "link": "/dados_cartao"
-        }
-    ]
+    return templates.TemplateResponse("prestador/pages/planos.html", {"request": request})
 
-    return templates.TemplateResponse("prestador/pages/planos.html", {"request": request, "planos": planos})
-
+@router.post("/post_planos")
+async def post_planos(request: Request, plano: str = Form(...)):
+    if plano == "gratuito":
+        return RedirectResponse("/perfil_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    elif plano == "pago":
+        return RedirectResponse("/dados_cartao", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.get("/dados_cartao", response_class=HTMLResponse)
 async def get_dados_cartao(request: Request):

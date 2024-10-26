@@ -1,12 +1,12 @@
 {% extends "pages/base.html" %}
 {% block subtitulo %}Planos{% endblock %}
 {% block conteudo %}
-<div class="container d-flex justify-content-center">
-    <div class="mx-5">
-        <div class="row">
-            <!-- Plano Gratuito -->
-            <div class="col-6">
-                <div class="">
+<form method="post" action="/post_planos">
+    <div class="container d-flex justify-content-center">
+        <div class="mx-5">
+            <div class="row">
+                <!-- Plano Gratuito -->
+                <div class="col-6">
                     <div class="bg-white py-4 rounded-5 my-4 border border-2 border-secondary-subtle">
                         <h4 class="text-center mb-4 fs-2">Plano Gratuito</h4>
                         <h2 class="text-center price">R$0,00</h2>
@@ -24,18 +24,16 @@
                             <li class="text-danger">✖ Visualização de Ofertas Locais</li>
                         </ul>
                         <div class="text-center">
-                            <a href="/perfil_prestador" style="text-decoration: none;">
-                                <button style="background-color: #E6E6E6; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-                                    QUERO ESTE
-                                </button>
-                            </a>
+                            <button type="submit" name="plano" value="gratuito"
+                                style="background-color: #E6E6E6; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                                QUERO ESTE
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Plano Pago -->
-            <div class="col-6">
-                <div class="">
+
+                <!-- Plano Pago -->
+                <div class="col-6">
                     <div class="bg-white py-4 rounded-5 my-4 border border-2 border-secondary-subtle">
                         <h4 class="text-center m-4 fs-2">Plano Pago + 1 mês grátis</h4>
                         <div class="recomendado-badge text-center my-3">
@@ -56,17 +54,15 @@
                             <li class="text-success">✔ Prioridade nas Solicitações</li>
                         </ul>
                         <div class="text-center">
-                            <a href="/dados_cartao" style="text-decoration: none;">
-                                <button style="background-color: #FB8F67; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-                                    QUERO ESTE
-                                </button>
-                            </a>
+                            <button type="submit" name="plano" value="pago"
+                                style="background-color: #FB8F67; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                                QUERO ESTE
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+</form>
 {% endblock %}

@@ -18,6 +18,12 @@ templates = obter_jinja_templates("templates")
 async def get_perfil_cliente(request: Request):
     return templates.TemplateResponse("cliente/pages/perfil_cliente.html", {"request": request})
 
+@router.post("/post_perfil_cliente", response_class=HTMLResponse)
+async def post_perfil_cliente(request: Request):
+    form_data = await request.form()
+    # Aqui você pode processar os dados do formulário
+    return templates.TemplateResponse("cliente/pages/perfil_cliente.html", {"request": request})
+
 @router.get("/perfil_prestador", response_class=HTMLResponse)
 async def perfil_prestador(request: Request):
     return templates.TemplateResponse("cliente/pages/perfil_prestador.html", {"request": request})
@@ -30,6 +36,11 @@ async def get_demanda_cliente(request: Request):
 async def get_comentario_cliente(request: Request):
     return templates.TemplateResponse("cliente/pages/comentario_cliente.html", {"request": request})
 
-@router.get("/editar_cliente", response_class=HTMLResponse)
-async def get_editar_cliente(request: Request):
-    return templates.TemplateResponse("cliente/pages/editar_cliente.html", {"request": request})
+@router.get("/editar", response_class=HTMLResponse)
+async def get_editar(request: Request):
+    return templates.TemplateResponse("cliente/pages/editar.html", {"request": request})
+
+@router.post("/editar", response_class=HTMLResponse)
+async def post_editar(request: Request):
+    return templates.TemplateResponse("cliente/pages/editar.html", {"request": request})
+
