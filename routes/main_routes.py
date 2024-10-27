@@ -21,52 +21,52 @@ async def get_root(request: Request):
 
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
-    return templates.TemplateResponse("main/pages/login.html", {"request": request})
+    usuario = request.state.usuario if hasattr(request.state, "usuario") else None
+    if not usuario or not usuario.perfil:
+        return templates.TemplateResponse("main/pages/login.html", {"request": request})    
+    if usuario.perfil == 1:
+        return RedirectResponse("/perfil_cliente", status_code=status.HTTP_303_SEE_OTHER)
+    if usuario.perfil == 2:
+        return RedirectResponse("/perfil_prestador", status_code=status.HTTP_303_SEE_OTHER)
+    if usuario.perfil == 3:
+        return RedirectResponse("/perfil_admin", status_code=status.HTTP_303_SEE_OTHER)
 
 @router.post("/post_login", response_class=HTMLResponse)
 async def post_login(
     email: str = Form(...),
     senha: str = Form(...)):
     # busca o usuário dono deste email
-    usuario = UsuarioRepo.obter_por_email(email)
+    usuario = UsuarioRepo.checar_credenciais(email, senha)
     # se não encontrou o usuário, é porque não existe um usuário com este e-mail
     if not usuario:
         response = RedirectResponse("/login", status_code=status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(response, "Credenciais inválidas! Cheque os valores digitados a tente novamente.")
         return response
     # se encontrou, confere a senha digitada com a senha que veio do banco de dados
-    if conferir_senha(senha, usuario.senha):
         # se a senha confere, cria o token com os dados do usuário e seu perfil
-        token = criar_token(usuario.id, usuario.nome, usuario.email, usuario.perfil)
-        # captura o nome do perfil de acordo com o número gravado no banco de dados
-        nome_perfil = None
-        match (usuario.perfil):
-            case 1: nome_perfil = "cliente"
-            case 2: nome_perfil = "prestador"
-            case 3: nome_perfil = "admin"
-            case _: nome_perfil = ""        
-        # cria uma respostas de redirecionamento para a área restrita do perfil
-        response = RedirectResponse(f"/{nome_perfil}", status_code=status.HTTP_303_SEE_OTHER) 
-        # grava na resposta o cookie contendo o token de autenticação   
-        response.set_cookie(
-            key=NOME_COOKIE_AUTH,
-            value=token,
-            max_age=3600*24*365*10,
-            httponly=True,
-            samesite="lax"
-        )
-        # grava na resposta uma mensagem de sucesso do login
-        adicionar_mensagem_sucesso(response, "Login realizado com sucesso!")
-        # envia a resposta para o usuário
-        return response
-    # se a senha não confere
-    else:
-        # cria uma resposta para a própria página de login
-        response = RedirectResponse("/login", status. HTTP_303_SEE_OTHER)
-        # grava uma mensagem negativa nessa resposta
-        adicionar_mensagem_erro(response, "Credenciais inválidas! Cheque os valores digitados a tente novamente.")
-        # envia a resposta para o usuário
-        return response
+    token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
+    # captura o nome do perfil de acordo com o número gravado no banco de dados
+    nome_perfil = None
+    match (usuario[2]):
+        case 1: nome_perfil = "cliente"
+        case 2: nome_perfil = "prestador"
+        case 3: nome_perfil = "admin"
+        case _: nome_perfil = ""        
+    # cria uma respostas de redirecionamento para a área restrita do perfil
+    response = RedirectResponse(f"/{nome_perfil}", status_code=status.HTTP_303_SEE_OTHER) 
+    # grava na resposta o cookie contendo o token de autenticação   
+    response.set_cookie(
+        key=NOME_COOKIE_AUTH,
+        value=token,
+        max_age=3600*24*365*10,
+        httponly=True,
+        samesite="lax"
+    )
+    # grava na resposta uma mensagem de sucesso do login
+    adicionar_mensagem_sucesso(response, "Login realizado com sucesso!")
+    # envia a resposta para o usuário
+    return response
+# se a senha não confere
 
 @router.get("/redefinir_senha", response_class=HTMLResponse)
 async def get_redefinir_senha(request: Request):
