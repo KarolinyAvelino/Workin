@@ -3,36 +3,40 @@
 {% block conteudo %}
 
 <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
         <div class="col-1">
             <img src="static/img/images/harry.jpg" alt="Imagem Circular" class="imagem-circular-prfil">
+            <div class="contact-info mt-2">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Email:</strong> harrypotter@gmail.com</p>
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Telefone:</strong> (28) 99923-89</p>
+            </div>
         </div>
-        <div class="col-2">
-
-                <div class="info-prfil">
+        <div class="col-3">
+            <div class="info-prfil">
+                <div class="d-flex align-items-center"; style="margin-top: -94px;">
+                    <h2 class="me-2 text-nowrap">Harry Potter</h2>
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Harry Potter
+                        <button class="btn btn-light p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border: none;">
+                            &#x22EE;
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="/sair">Sair</a></li>
                           <li><a class="dropdown-item" href="/editar">Editar Perfil</a></li>
                         </ul>
-                      </div>
-                    <div class="rating-prfil">
-                        <h1>★★★★★</h1>
                     </div>
                 </div>
 
+                <div class="rating-prfil" style="font-size: 1rem; color: gold; margin-top: -4px;">
+                    <small>★★★★★</small>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="col">
-        </div>
-
     </div>
 </div>
 <br>
 <hr>
+
+
 
 <div class="container">
     <div class="profile-section-prfil">

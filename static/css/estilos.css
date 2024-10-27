@@ -3097,3 +3097,22 @@ body {
     font-size: 20px;
     color: orange;
 }
+
+.contact-info {
+    margin-top: 0.5rem; /* Espaço entre a imagem e as informações de contato */
+}
+
+.contact-info-text {
+    margin: 0; /* Remove margens para alinhar as informações de contato */
+    font-size: 0.9rem; /* Tamanho da fonte das informações de contato */
+}
+
+.align-info {
+    margin-top: -95px; /* Ajuste a margem superior para elevar o nome e o botão */
+}
+
+.rating-prfil {
+    font-size: 1rem; /* Tamanho da fonte das estrelas */
+    color: gold; /* Cor das estrelas */
+    margin-top: -8px; /* Ajuste para aproximar as estrelas do nome */
+}

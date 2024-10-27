@@ -48,9 +48,9 @@ async def post_login(
     # captura o nome do perfil de acordo com o número gravado no banco de dados
     nome_perfil = None
     match (usuario[2]):
-        case 1: nome_perfil = "cliente"
-        case 2: nome_perfil = "prestador"
-        case 3: nome_perfil = "admin"
+        case 1: nome_perfil = "perfil_cliente"
+        case 2: nome_perfil = "perfil_prestador"
+        case 3: nome_perfil = "perfil_admin"
         case _: nome_perfil = ""        
     # cria uma respostas de redirecionamento para a área restrita do perfil
     response = RedirectResponse(f"/{nome_perfil}", status_code=status.HTTP_303_SEE_OTHER) 
