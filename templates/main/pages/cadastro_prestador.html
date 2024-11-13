@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-{% from "macros.html" import input_email, input_password, input_text, input_radios %}
+{% from "macros.html" import input_email, input_password, input_text, input_select, input_textarea %}
 {% block subtitulo %}Cadastro do prestador{% endblock %}
 {% block conteudo %}
 <div class="payment-container ">
@@ -12,8 +12,8 @@
                         {{ input_text("nome", "Nome Completo", "required" )}}  
                         {{ input_email("email", "E-mail", "required")}}
                         {{ input_text("telefone", "Telefone", "required")}}
-                        {{ input_radios("categoria", "Categoria", "required" ) }}
-                        {{ input_textarea("especialidade", "Especialidade", "required")}}
+                        {{ input_select("categoria", "Categoria", categorias, "required" ) }}
+                        {{ input_text("especialidade", "Especialidade", "required" )}}
                         {{ input_password("senha", "Senha", "required")}}
                         {{ input_password("confirma_senha", "Confirmar Senha", "required")}}
                         <div class="text-center">

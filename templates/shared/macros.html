@@ -26,19 +26,17 @@
 </div>
 {% endmacro %}  -->
 
-{% macro input_textarea(name, label, attributes='', value='', div_classes='') %}
-<div class="{{div_classes}}">
-    <div class="form-group m-2">
-        <textarea type= "especialidade" name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}}>{{value|e}}</textarea>
-        <label for="{{name}}">{{label}}</label>
-    </div>
+<!-- {% macro input_textarea(name, label, attributes='', value='', div_classes='') %}
+<div class="form-group m-2">
+    <textarea type= "text" name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}}>{{value|e}}</textarea>
+    <label for="{{name}}">{{label}}</label>
 </div>
-{% endmacro %}
+{% endmacro %} -->
 
 
 
 
-{% macro input_radios(name, label, options, attributes='', value='', div_classes='') %}
+<!-- {% macro input_radios(name, label, options, attributes='', value='', div_classes='') %}
 <div class="form-group">
     <label for="{{name}}">{{label}}</label>
     <input type="text" id="{{name}}" name="{{name}}" class="form-control"  {{attributes|safe}} >
@@ -49,7 +47,21 @@
         <option value="3">Cuidador</option>  
     </select>
 </div>
-{% endmacro %} 
+{% endmacro %}  -->
+
+{% macro input_select(name, label, options, attributes='', value='', div_classes='') %}
+<div class="form-group m-2">
+    <select name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}} value="{{value|e}}">
+        <option value="" {{"selected" if not value}}>Escolha uma opção...</option>
+        {% for option in options %}
+        {%- set selected = "selected" if option.value == value -%}
+        <option value="{{option.value}}" {{selected}}>{{option.label}}</option>
+        {% endfor %}
+    </select>
+    <label for="{{name}}">{{label}}</label>
+</div>
+
+{% endmacro %}
 
 <!-- {% macro input_radios(name, label, options, attributes='', value='', div_classes='') %}
 <div class="form-group {{div_classes}}">

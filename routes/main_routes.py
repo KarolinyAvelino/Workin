@@ -134,7 +134,12 @@ async def post_cadastro_cliente(
 
 @router.get("/cadastro_prestador", response_class=HTMLResponse)
 async def get_cadastro_prestador(request: Request):
-    return templates.TemplateResponse("main/pages/cadastro_prestador.html", {"request": request})
+    categorias = [
+        {"value": 1, "label": "Limpeza"},
+        {"value": 2, "label": "Passeador de Pets"},
+        {"value": 3, "label": "Beleza"},
+    ]
+    return templates.TemplateResponse("main/pages/cadastro_prestador.html", {"request": request,"categorias": categorias})
 
 @router.post("/post_cadastro_prestador", response_class=HTMLResponse)
 async def post_cadastro_prestador(
