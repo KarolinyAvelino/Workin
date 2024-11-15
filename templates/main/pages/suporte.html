@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_email, input_text, input_textarea %}
 {% block subtitulo %}Suporte{% endblock %}
 {% block conteudo %}
 
@@ -9,22 +10,10 @@
 
                 <div class="col-md-6">
                     <form class="form-contato p-4 rounded shadow">
-                        <div class="mb-3">
-                            <label for="nome" class="form-label">Nome completo</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite seu telefone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="descricao" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricao" name="descricao" rows="4" placeholder="Descreva o problema"></textarea>
-                        </div>
+                        {{ input_text("nome", "Nome Completo", "required" )}}
+                        {{ input_email("email", "E-mail", "required")}}
+                        {{ input_text("telefone", "Telefone", "required  data-mask='telefone'")}}
+                        {{ input_textarea("descricao", "Descrição", "required") }}
                         <button type="submit" class="btn btn-submit w-100">Enviar</button>
                     </form>
                 </div>

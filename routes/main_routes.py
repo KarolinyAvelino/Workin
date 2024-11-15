@@ -10,6 +10,14 @@ from util.cookies import NOME_COOKIE_AUTH
 from util.mensagens import adicionar_mensagem_erro, adicionar_mensagem_sucesso
 from util.templates import obter_jinja_templates
 
+from fastapi import FastAPI
+from routes.rotas_prestador import router as rotas_prestador
+
+app = FastAPI()
+
+# Registre as rotas
+app.include_router(rotas_prestador)
+
 router = APIRouter()
 templates = obter_jinja_templates("templates")
 
@@ -183,5 +191,4 @@ async def get_sair():
         httponly=True,
         samesite="lax")
     return response
-
 

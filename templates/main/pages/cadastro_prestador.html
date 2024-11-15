@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-{% from "macros.html" import input_email, input_password, input_text, input_select, input_textarea %}
+{% from "macros.html" import input_email, input_password, input_text, input_select%}
 {% block subtitulo %}Cadastro do prestador{% endblock %}
 {% block conteudo %}
 <div class="payment-container ">
@@ -11,7 +11,7 @@
                         <h3 class="card-title text-center">Seja um profissional Workin!</h3>
                         {{ input_text("nome", "Nome Completo", "required" )}}  
                         {{ input_email("email", "E-mail", "required")}}
-                        {{ input_text("telefone", "Telefone", "required")}}
+                        {{ input_text("telefone", "Telefone", "required  data-mask='telefone'")}}
                         {{ input_select("categoria", "Categoria", categorias, "required" ) }}
                         {{ input_text("especialidade", "Especialidade", "required" )}}
                         {{ input_password("senha", "Senha", "required")}}
