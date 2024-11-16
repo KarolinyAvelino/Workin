@@ -27,7 +27,12 @@ async def post_planos(request: Request, plano: str = Form(...)):
 
 @router.get("/dados_cartao", response_class=HTMLResponse)
 async def get_dados_cartao(request: Request):
-    return templates.TemplateResponse("prestador/pages/dados_cartao.html", {"request": request})
+    forma_pagamento = [
+        {"value": 1, "label": "credito"},
+        {"value": 1, "label": "debito"},
+    ]
+    return templates.TemplateResponse(
+        "/prestador/pages/dados_cartao.html", {"request": request, "forma_pagamento": forma_pagamento})
 
 @router.get("/demanda_prestador", response_class=HTMLResponse)
 async def get_demanda_prestador(request: Request):
