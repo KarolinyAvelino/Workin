@@ -1,25 +1,12 @@
 import dotenv
 from fastapi import Depends, FastAPI
 from fastapi.staticfiles import StaticFiles
-from routes.main_routes import router as main_routes
 from repositories.usuario_repo import UsuarioRepo
-from routes import main_routes, rotas_cliente
 from util.auth import checar_permissao, checar_autenticacao
 from util.exceptions import configurar_excecoes
-
-from routes.main_routes import router as main_router
-from routes.rotas_admin import router as admin_router
-from routes.rotas_cliente import router as cliente_router
-from routes.rotas_prestador import router as prestador_router
+from routes import main_routes, rotas_admin, rotas_cliente, rotas_prestador
 
 UsuarioRepo.criar_tabela()  #criação da tabela
-
-app = FastAPI() #criação do objeto
-app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
-
-app.middleware(middleware_type="http")(checar_autenticacao)  #erro
-configurar_excecoes(app)
-app.include_router(main_routes.router)  #incluir arquivos de rota
 
 dotenv.load_dotenv()
 UsuarioRepo.criar_tabela()
@@ -28,10 +15,33 @@ app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
 app.middleware("http")(checar_autenticacao)
 configurar_excecoes(app)
 
-app.include_router(main_router)
-app.include_router(admin_router)
-app.include_router(cliente_router)
-app.include_router(prestador_router)
+app.include_router(main_routes.router)  #incluir arquivos de rota
+app.include_router(rotas_admin.router)
+app.include_router(rotas_prestador.router)
+app.include_router(rotas_cliente.router)
+
+
+# from fastapi import FastAPI
+# from fastapi.staticfiles import StaticFiles
+# from routes.main_routes import router as main_routes
+# from repositories.usuario_repo import UsuarioRepo
+# from routes import main_routes, rotas_admin, rotas_cliente, rotas_prestador
+# from util.auth import checar_permissao, checar_autenticacao
+# from util.exceptions import configurar_excecoes
+
+# UsuarioRepo.criar_tabela()  #criação da tabela
+
+# app = FastAPI() #criação do objeto
+# app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
+
+# app.middleware(middleware_type="http")(checar_autenticacao)  #erro
+# configurar_excecoes(app)
+# app.include_router(main_routes.router)  #incluir arquivos de rota
+# app.include_router(rotas_admin.router)
+# app.include_router(rotas_prestador.router)
+# app.include_router(rotas_cliente.router)
+
+
 
 
 
