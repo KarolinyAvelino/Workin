@@ -9,8 +9,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title text-center">Seja um cliente Workin!</h3>
-                        {{ input_text("nome", "Nome Completo", "required" )}}  
-                        {{ input_email("email", "E-mail", "required")}}  
+                        {{ input_text("nome", "Nome Completo", "required data-mask='nome'" )}}  
+                        {{ input_email("email", "E-mail", "required data-mask='email'")}}  
                         {{ input_text("telefone", "Telefone", "required  data-mask='telefone'")}}  
                         {{ input_password("senha", "Senha", "required")}}
                         {{ input_password("confirma_senha", "Confirmar Senha", "required")}}
