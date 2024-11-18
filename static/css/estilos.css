@@ -3117,3 +3117,20 @@ body {
     margin-top: -8px; /* Ajuste para aproximar as estrelas do nome */
 }
 
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Mantém a cor do texto do elemento pai */
+}
+
+a:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho ao passar o mouse */
+}
+
+a:focus, a:hover {
+    outline: none; /* Remove a borda azul do foco */
+}
+
+a p {
+    margin-top: 10px; /* Espaço entre a imagem e o texto */
+    font-size: 1.2em; /* Ajuste do tamanho da fonte */
+}
