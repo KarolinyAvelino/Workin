@@ -1,4 +1,4 @@
-{% macro input_text(name, label, attributes='', value='', div_classes='', placeholder='') %}
+{% macro input_text(name, label, attributes='', value='', div_classes='') %}
 <div class="{{div_classes}}">
     <label for="{{name}}">{{label}}</label>
     <input type="text" id="{{name}}" name="{{name}}" class="form-control"  {{attributes|safe}} value="{{value|e}}" >
@@ -6,14 +6,14 @@
 {% endmacro %}
 
 {% macro input_email(name, label, attributes='', value='', div_classes='') %}
-<div class="form-group m-2">
+<div class="form-group m-2 {{ div_classes }}">
     <label for="{{name}}">{{label}}</label>
-    <input type="email" id="{{name}}" name="{{name}}" class="form-control"  {{attributes|safe}} value="{{value|e}}" >
+    <input type="email" id="{{name}}" name="{{name}}" class="form-control" {{attributes|safe}} value="{{value|e}}">
 </div>
 {% endmacro %}
 
-{% macro input_password(name, label, attributes='') %}
-<div class="form-group m-2">
+{% macro input_password(name, label, attributes='', div_classes='') %}
+<div class="form-group m-2 {{ div_classes }}">
     <label for="{{name}}">{{label}}</label>
     <input type="password" id="{{name}}" name="{{name}}" class="form-control"  {{attributes|safe}} >
 </div>
@@ -34,7 +34,7 @@
 {% endmacro %}
 
 {% macro input_radios(name, label, options, attributes='', value='', div_classes='') %}
-<div class="{{div_classes}}">
+<div class="form-group m-2 {{ div_classes }}">
     <fieldset class="border rounded-2" style="padding: .75rem">
         <legend class="text-secondary" style="font-size:13px">{{label}}</legend>
         <div class="row gx-3">
@@ -68,7 +68,7 @@
  -->
 
 
-{% macro input_select(name, label, options, attributes='', value='', div_classes='form-group m-2') %}
+{% macro input_select(name, label, options, attributes='', value='', div_classes='') %}
 <div class="{{div_classes}}">
     <label for="{{name}}">{{label}}</label>
     <select name="{{name}}" id="{{name}}" class="form-control" {{attributes|safe}}>
