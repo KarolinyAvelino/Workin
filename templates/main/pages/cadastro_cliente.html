@@ -9,11 +9,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title text-center">Seja um cliente Workin!</h3>
-                        {{ input_text("nome", "Nome Completo","required data-mask='nome'")}}
+                        {{ input_text("nome", "Nome Completo","required data-mask='nome' placeholder='Digite seu nome...'" )}}
                         <div class="form-group m-2 ms-auto">               
-                            {{ input_email("email", "E-mail", "required data-mask='email' style='width: 106%;'", "", "ms-auto") }}
+                            {{ input_email("email", "E-mail", "required  placeholder='ex.: workin@gmail.com' data-mask='email'style='width: 106%;'", "", "ms-auto") }}
                         </div>
-                        {{ input_text("telefone", "Telefone", "required  data-mask='telefone'")}}
+                        {{ input_text("telefone", "Telefone", "required placeholder='(00) 00000-0000' data-mask='telefone'")}}
                         <div class="form-group m-2 ms-auto">
                             {{ input_password("senha", "Senha", "required style='width: 106%;'", "ms-auto")}}
                         </div>
