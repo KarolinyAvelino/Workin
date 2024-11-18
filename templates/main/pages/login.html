@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h3 class="card-title text-left m-3">Fazer login</h3>
                     <form method="post" action="/post_login">                      
-                        {{ input_email("email", "E-mail", "required data-mask='email'")}}                                         
+                        {{ input_email("email", "E-mail", "required placeholder='ex.: workin@gmail.com' data-mask='email'")}}                                         
                         {{ input_password("senha", "Senha", "required")}}
                         <div class="text-center">
                             <button type="submit" class="btn m-4 botao-login">Entrar</button>

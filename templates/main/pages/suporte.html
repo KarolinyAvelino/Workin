@@ -10,10 +10,10 @@
 
                 <div class="col-md-6">
                     <form class="form-contato p-4 rounded shadow">
-                        {{ input_text("nome", "Nome Completo", "required" )}}
-                        {{ input_email("email", "E-mail", "required data-mask='email'", div_classes='me-2')}}
-                        {{ input_text("telefone", "Telefone", "required  data-mask='telefone'")}}
-                        {{ input_textarea("descricao", "Descrição", "required") }}
+                        {{ input_text("nome", "Nome Completo","required data-mask='nome' placeholder='Digite seu nome...'" )}}
+                        {{ input_email("email", "E-mail", "required placeholder='ex.: workin@gmail.com' data-mask='email' ") }}
+                        {{ input_text("telefone", "Telefone", "required placeholder='(00) 00000-0000' data-mask='telefone'")}}
+                        {{ input_textarea("descricao", "Descrição", "required placeholder='Descreva seu problema...'") }}
                         <button type="submit" class="btn btn-submit w-100">Enviar</button>
                     </form>
                 </div>

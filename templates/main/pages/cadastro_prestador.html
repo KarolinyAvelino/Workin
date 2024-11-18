@@ -9,21 +9,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title text-center">Seja um profissional Workin!</h3>
-                        {{ input_text("nome", "Nome Completo", "required placeholder='Digite seu nome...' data-mask='nome'" )}} 
-                        <div class="form-group m-2 ms-auto"> 
-                            {{ input_email("email", "E-mail", "required placeholder='ex.: workin@gmail.com' data-mask='email' style='width: 105%;'", "", "ms-auto") }}
-                        </div>
+                        {{ input_text("nome", "Nome Completo", "required placeholder='Digite seu nome...' data-mask='nome'" )}}  
+                        {{ input_email("email", "E-mail", "required placeholder='ex.: workin@gmail.com' data-mask='email' ") }}
                         {{ input_text("telefone", "Telefone", "required placeholder='(00) 00000-0000'  data-mask='telefone'")}}
-                        <div class="form-group m-2 ms-auto">
-                            {{ input_select("categoria", "Categoria", categorias, "required style='width: 102%;'", "ms-auto") }}
-                        </div>
-                        {{ input_text("especialidade", "Especialidade", "required placeholder='ex.:Manicure, Cabeleleiro(a)...'" )}}
-                        <div class="form-group m-2 ms-auto">
-                            {{ input_password("senha", "Senha", "required style='width: 106%;'", "ms-auto")}}
-                        </div>
-                        <div class="form-group m-2 ms-auto">
-                            {{ input_password("confirma_senha", "Confirmar Senha", "required style='width: 106%;'", "ms-auto")}}
-                        </div>
+                        {{ input_select("categoria", "Categoria", categorias, "required") }}
+                        {{ input_text("especialidade", "Especialidade", "required placeholder='ex.:Manicure, Cabeleleiro(a)'" )}}
+                        {{ input_password("senha", "Senha", "required")}}
+                        {{ input_password("confirma_senha", "Confirmar Senha", "required")}}
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-block m-3 botao-login">Cadastrar</button>
                         </div>
