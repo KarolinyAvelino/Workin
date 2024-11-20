@@ -36,7 +36,15 @@ async def get_root(request: Request):
 
 @router.get("/cuidados", response_class=HTMLResponse)
 async def get_root(request: Request):
-    return templates.TemplateResponse("main/pages/informatica.html", {"request": request})
+    return templates.TemplateResponse("main/pages/cuidados.html", {"request": request})
+
+@router.get("/jardim", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/jardim.html", {"request": request})
+
+@router.get("/beleza", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/beleza.html", {"request": request})
 
 @router.get("/informatica", response_class=HTMLResponse)
 async def get_root(request: Request):
