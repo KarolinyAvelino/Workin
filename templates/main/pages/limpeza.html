@@ -1,0 +1,318 @@
+{% extends "pages/base.html" %}
+{% block subtitulo %}Página Principal{% endblock %}
+{% block conteudo %}
+
+<div>  {% set usuario = request.state.usuario %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <link rel="shortcut icon" type="imagex/png" href="./logo/workin.ico">
+</head>
+<body>
+    <div class="row justify-content-center">
+        <div class="row">
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="encanador">
+                <a href="/" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logopasseador.png" alt="Imagem acima do Passeador de Pets">
+                    <p>Pets</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="baba">
+                <a href="/residencia" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logoresidual.png" alt="Imagem acima do Serviços Residuais">
+                    <p>Serviços Residenciais</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="pintor">
+                <a href="/limpeza" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logolimpeza.png" alt="Imagem acima de Limpeza">
+                    <p>Limpeza</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="eletricista">
+                <a href="/cuidados" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logocuidador.png" alt="Imagem acima do Cuidador">
+                    <p>Cuidados</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="jardineiro">
+                <a href="/jardim" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logojardinagem.png" alt="Imagem acima do Cuidador">
+                    <p>Jardim</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="faxineiro">
+                <a href="/beleza" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logobeleza.png" alt="Imagem acima da Beleza">
+                    <p>Beleza</p>
+                </a>
+            </div>
+        
+            <div class="col d-flex flex-column justify-content-center align-items-center" data-category="motorista">
+                <a href="/informatica" class="text-center d-flex flex-column align-items-center">
+                    <img class="img-fluid w-50" src="static/img/logo/logoinformatica.png" alt="Imagem acima de Informática">
+                    <p>Informática</p>
+                </a>
+            </div>
+        </div>
+        <br><br>
+        
+
+    <div class="photo-grid">
+        {% if usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3 %}
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza1.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza2.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza3.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza4.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza5.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza6.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza7.webp" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza8.webp" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza9.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza10.webp" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza11.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+            <a href="/perfil_prestador">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza12.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Especialidade - Cidade</p>
+                </div>
+            </a>
+        {% else %}
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza1.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza2.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza3.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza4.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza5.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza6.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza7.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza8.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza9.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza10.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza11.png" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="photo-item">
+                    <img src="static/img/images/limpeza12.jpg" alt="Nome do limpeza">
+                    <p>Nome do limpeza<br>Faça login para ver detalhes</p>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+    
+    
+
+
+
+    <!-- <div class="photo-grid">
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador1.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador2.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador3.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador4.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador5.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador6.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador7.webp" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador8.webp" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador9.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador10.webp" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador11.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+        <a href="/perfil_prestador">
+            <div class="photo-item">
+                <img src="static/img/images/passeador12.jpg" alt="Nome do Passeador">
+                <p>Nome do Passeador<br>Especialidade - Cidade</p>
+            </div>
+        </a>
+    </div>
+     -->
+
+    
+    
+    <div class="button-container">
+        <div class="button button1"><img src="static/img/demandalogo.png" alt="Botão 1"></div>
+        <div class="button1-rectangle">Conteúdo do botão 1</div>
+        <div class="button button2"><img src="static/img/fotoslogo.png" alt="Botão 2"></div>
+        <div class="button2-rectangle">Conteúdo do botão 2</div>
+        <div class="button button3"><img src="static/img/chatlogo.png" alt="Botão 3"></div>
+        <div class="button3-rectangle">Conteúdo do botão 3</div>
+    </div>
+
+
+
+    
+</body>
+</html>
+</div>
+
+{% endblock %}

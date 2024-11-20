@@ -26,6 +26,22 @@ templates = obter_jinja_templates("templates")
 async def get_root(request: Request):
     return templates.TemplateResponse("main/pages/index.html", {"request": request})
 
+@router.get("/residencia", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/residencia.html", {"request": request})
+
+@router.get("/limpeza", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/limpeza.html", {"request": request})
+
+@router.get("/cuidados", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/informatica.html", {"request": request})
+
+@router.get("/informatica", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("main/pages/informatica.html", {"request": request})
+
 
 @router.get("/login", response_class=HTMLResponse)
 async def get_login(request: Request):
