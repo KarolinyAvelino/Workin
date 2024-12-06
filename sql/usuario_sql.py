@@ -11,7 +11,7 @@ SQL_CRIAR_TABELA = """
 """
 
 SQL_INSERIR = """
-    INSERT INTO usuario(nome, email, telefone, categoria, especialidade, senha, perfil)
+    INSERT INTO usuario (nome, email, telefone, categoria, especialidade, senha, perfil)
     VALUES (?, ?, ?, ?, ?, ?, ?)
 """
 
@@ -20,7 +20,6 @@ SQL_ALTERAR = """
     SET nome=?, email=?, telefone=?, categoria=?, especialidade=?
     WHERE id=?
 """
-
 
 SQL_EXCLUIR = """
     DELETE FROM usuario    
@@ -39,7 +38,6 @@ SQL_OBTER_POR_EMAIL = """
     WHERE id=?
 """
 
-
 SQL_OBTER_QUANTIDADE = """
     SELECT COUNT(*)
     FROM usuario
@@ -57,9 +55,8 @@ SQL_CHECAR_CREDENCIAIS = """
     WHERE email = ?
 """
 
-
 SQL_OBTER_POR_PERFIL = """
-    SELECT id, nome, data_nascimento, email, telefone, perfil, tema
+    SELECT id, nome, email, telefone, categoria, especialidade, senha, perfil
     FROM usuario
     WHERE perfil = ?
 """

@@ -24,7 +24,8 @@ templates = obter_jinja_templates("templates")
 
 @router.get("/", response_class=HTMLResponse)
 async def get_root(request: Request):
-    return templates.TemplateResponse("main/pages/index.html", {"request": request})
+    prestadores = UsuarioRepo.obter_por_perfil(2)
+    return templates.TemplateResponse("main/pages/index.html", {"request": request, "prestadores": prestadores})
 
 @router.get("/residencia", response_class=HTMLResponse)
 async def get_root(request: Request):
