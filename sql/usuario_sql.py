@@ -56,3 +56,10 @@ SQL_CHECAR_CREDENCIAIS = """
     FROM usuario
     WHERE email = ?
 """
+
+
+SQL_OBTER_POR_PERFIL = """
+    SELECT id, nome, data_nascimento, email, telefone, perfil, tema
+    FROM usuario
+    WHERE perfil = ?
+"""

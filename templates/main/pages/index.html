@@ -68,13 +68,19 @@
         
 
     <div class="photo-grid">
-        {% if usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3 %}
+
+        {% for a in alunos %}
             <a href="/perfil_prestador">
                 <div class="photo-item">
-                    <img src="static/img/images/passeador1.jpg" alt="Nome do Passeador">
-                    <p>Nome do Passeador<br>Especialidade - Cidade</p>
+                    <img src="static/img/images/passeador1.jpg" alt="{{a.nome}}">
+                    <p>{{a.nome}}<br>{{a.email}} <br>{{a.telefone}}</p>
+                    <div class="card-footer">
+                        <a href="/usuario/{{a.id}}" class="btn btn-primary">Ver Detalhes</a>
+                    </div>
                 </div>
             </a>
+
+
             <a href="/perfil_prestador">
                 <div class="photo-item">
                     <img src="static/img/images/passeador55.jpg" alt="Nome do Passeador">
@@ -141,7 +147,7 @@
                     <p>Nome do Passeador<br>Especialidade - Cidade</p>
                 </div>
             </a>
-        {% else %}
+
             <a href="/login">
                 <div class="photo-item">
                     <img src="static/img/images/passeador1.jpg" alt="Nome do Passeador">
@@ -214,89 +220,9 @@
                     <p>Nome do Passeador<br>Faça login para ver detalhes</p>
                 </div>
             </a>
-        {% endif %}
+
     </div>
     
-    
-
-
-
-    <!-- <div class="photo-grid">
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador1.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador2.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador3.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador4.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador5.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador6.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador7.webp" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador8.webp" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador9.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador10.webp" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador11.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-        <a href="/perfil_prestador">
-            <div class="photo-item">
-                <img src="static/img/images/passeador12.jpg" alt="Nome do Passeador">
-                <p>Nome do Passeador<br>Especialidade - Cidade</p>
-            </div>
-        </a>
-    </div>
-     -->
-
     
     
     <div class="button-container">
@@ -315,4 +241,6 @@
 </html>
 </div>
 
-{% endblock %}
+
+
+

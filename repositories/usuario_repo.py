@@ -144,3 +144,13 @@ class UsuarioRepo:
                 if conferir_senha(senha, dados[3]):
                     return (dados[0], dados[1], dados[2], dados[4])
             return None
+
+    @staticmethod
+    def obter_por_perfil(perfil: int) -> list[Usuario]:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            cursor.execute(SQL_OBTER_POR_PERFIL, (perfil,))
+            dados = cursor.fetchall()
+            if dados is None:
+                return []
+            return [Usuario(**usuario) for usuario in dados]

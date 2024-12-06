@@ -5,8 +5,7 @@ import bcrypt
 from fastapi import HTTPException, Request, status
 import jwt
 from dtos.usuario_autenticado_dto import UsuarioAutenticadoDto
-
-NOME_COOKIE_AUTH = "jwt-token"
+from util.cookies import NOME_COOKIE_AUTH
 
 async def obter_usuario_logado(request: Request) -> dict:
     try:
@@ -41,7 +40,7 @@ async def checar_permissao(request: Request):
     area_do_admin = request.url.path.startswith("/perfil_admin")
     area_do_cliente = request.url.path.startswith("/perfil_cliente")
     area_do_prestador = request.url.path.startswith("/perfil_prestador")    
-    if (area_do_usuario or area_do_admin) and (not usuario or not usuario.perfil):
+    if (area_do_cliente or area_do_usuario or area_do_admin or area_do_prestador) and (not usuario or not usuario.perfil):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
     if area_do_cliente and usuario.perfil != 1:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)

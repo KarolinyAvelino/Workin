@@ -79,7 +79,7 @@ async def post_login(
     token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
     # captura o nome do perfil de acordo com o número gravado no banco de dados
     nome_perfil = None
-    match (usuario[2]):
+    match (usuario[3]):
         case 1: nome_perfil = "perfil_cliente"
         case 2: nome_perfil = "perfil_prestador"
         case 3: nome_perfil = "perfil_admin"
