@@ -12,7 +12,7 @@
             <img src="/static/img/images/cartao.jpeg" width="600" height="100" alt="Cartão">
         </div>
         <div class="separator"  style="margin: 20px;" ></div>
-        <form>
+        <form method="post" action="/prestador/post_dados_cartao">
             {{input_text("numero_cartao", "Número do Cartão","required data-mask='cartao'", div_classes="mb-3 payment-input")}}    
             <div class="row">
                 {{ input_text("data_validade", "Data de Validade","required data-mask='mes_ano'", div_classes="col-4")}}
